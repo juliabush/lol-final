@@ -7,7 +7,10 @@ import { PuuidCopyBox } from '@/components/puuid-copy-box'
 async function getAccountByPuuid(puuid: string) {
   try {
     // Use relative URL instead of constructing with baseUrl
-    const url = `/api/puuid/${puuid}`;
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+    const host = headers().get('host'); // Get the host dynamically
+  
+    const url = `${protocol}://${host}/api/puuid/${puuid}`;
     
     const response = await fetch(url, { 
       next: { revalidate: 3600 } // Cache for 1 hour

@@ -36,7 +36,10 @@ function generateRandomTaglines(count: number = 10): string[] {
  */
 async function checkNameAvailability(username: string, tagline: string) {
     try {
-      const url = `/api/account/${encodeURIComponent(username)}/${tagline}`;
+        const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+        const host = headers().get('host'); // Get the host dynamically
+      
+        const url = `${protocol}://${host}/api/account/${encodeURIComponent(username)}/${tagline}`;
       const response = await fetch(url, { next: { revalidate: 3600 } });
       
       if (response.status === 404) {
