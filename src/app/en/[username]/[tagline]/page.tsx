@@ -2,25 +2,19 @@ import { NameChecker } from '@/components/name-checker'
 import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
+import { GitCommitVertical } from 'lucide-react'
+import { getAccountByRiotId } from '@/lib/riot-api'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const url = `/api/account/${encodeURIComponent(username)}/${tagline}`
+    const account = await getAccountByRiotId(username, tagline)
     
-    const response = await fetch(url, {
-      cache: 'no-store'
-    })
-
-    if (response.status === 404) {
+    if (!account) {
       // Name is available
       return { isAvailable: true, account: null }
-    } else if (response.ok) {
-      // Name is taken
-      const account = await response.json()
-      return { isAvailable: false, account }
     } else {
-      // Handle other errors
-      throw new Error(response.statusText)
+      // Name is taken
+      return { isAvailable: false, account }
     }
   } catch (error) {
     console.error('Error checking name:', error)
