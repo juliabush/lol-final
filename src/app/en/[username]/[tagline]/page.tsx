@@ -2,16 +2,15 @@ import { NameChecker } from '@/components/name-checker'
 import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
-import { headers } from 'next/headers';
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const headersList = await headers()
-    const host = headersList.get('host')
-    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
-    
-    const url = `${protocol}://${host}/api/account/${encodeURIComponent(username)}/${tagline}`
-    
+    try {
+      const baseUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000';
+  
+    const url = `${baseUrl}/api/account/${encodeURIComponent(username)}/${tagline}`
     const response = await fetch(url, {
       cache: 'no-store'
     })
