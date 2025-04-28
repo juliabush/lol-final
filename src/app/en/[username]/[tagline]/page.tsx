@@ -55,6 +55,15 @@ export default async function NameResult({
                 puuid={account.puuid}
                 gameName={account.gameName}
                 tagLine={account.tagLine}
+                summonerInfo={{
+                  id: '',
+                  name: account.gameName,
+                  profileIconId: 0,
+                  summonerLevel: 0
+                }}
+                region="na1"
+                platformId="na1"
+                lastMatchTime={null}
               />
               
               <Link 
