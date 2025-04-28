@@ -25,7 +25,7 @@ async function checkNameAvailability(username: string, tagline: string) {
 export default async function NameResult({
   params
 }: {
-  params: { username: string; tagline: string }
+  params: Promise <{ username: string; tagline: string }>
 }) {
   const { username, tagline } = await params
   const decodedUsername = decodeURIComponent(username)
