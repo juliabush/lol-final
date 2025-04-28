@@ -6,12 +6,7 @@ import { headers } from 'next/headers';
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const baseUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000';
-  
-    const url = `${baseUrl}/api/account/${encodeURIComponent(username)}/${tagline}`;
-  
+    const url = `/api/account/${encodeURIComponent(username)}/${tagline}`;
     const response = await fetch(url);
 
     if (response.status === 404) {
