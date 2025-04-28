@@ -42,8 +42,7 @@ async function checkNameAvailability(username: string, tagline: string) {
         : 'http://localhost:3000';
     
       const url = `${baseUrl}/api/account/${encodeURIComponent(username)}/${tagline}`;
-      const response = await fetch(url, { next: { revalidate: 3600 } });
-      
+      const response = await fetch(url);
       if (response.status === 404) {
         // Name is available
         return { isAvailable: true, account: null };

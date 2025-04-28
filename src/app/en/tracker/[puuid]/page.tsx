@@ -13,9 +13,7 @@ async function getAccountByPuuid(puuid: string) {
     : 'http://localhost:3000';
 
     const url = `${baseUrl}/api/puuid/${puuid}`;
-    const response = await fetch(url, { 
-      next: { revalidate: 3600 } // Cache for 1 hour
-    });
+    const response = await fetch(url);
 
     if (!response.ok) {
       throw new Error('Account not found');
