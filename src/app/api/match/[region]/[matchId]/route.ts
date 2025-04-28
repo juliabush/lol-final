@@ -2,10 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { region: string; matchId: string } }
+  { params }: { params: Promise<{ region: string; matchId: string }> }
 ) {
-  params = await params
-  const { region, matchId } = params
+  const { region, matchId } = await params
   const apiKey = process.env.RIOT_API_KEY
   
   if (!apiKey) {

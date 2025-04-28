@@ -2,12 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { region: string; puuid: string } }
+  { params }: { params: Promise<{ region: string; puuid: string }> }
 ) {
-  params = await params
-  const { region, puuid } = params
+  const { region, puuid } = await params
   const apiKey = process.env.RIOT_API_KEY
-  
   if (!apiKey) {
     return NextResponse.json({ error: 'API key not configured' }, { status: 500 })
   }
