@@ -6,23 +6,30 @@ import { headers } from 'next/headers';
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const url = `/api/account/${encodeURIComponent(username)}/${tagline}`;
-    const response = await fetch(url);
+    const headersList = await headers()
+    const host = headersList.get('host')
+    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
+    
+    const url = `${protocol}://${host}/api/account/${encodeURIComponent(username)}/${tagline}`
+    
+    const response = await fetch(url, {
+      cache: 'no-store'
+    })
 
     if (response.status === 404) {
       // Name is available
-      return { isAvailable: true, account: null };
+      return { isAvailable: true, account: null }
     } else if (response.ok) {
       // Name is taken
-      const account = await response.json();
-      return { isAvailable: false, account };
+      const account = await response.json()
+      return { isAvailable: false, account }
     } else {
       // Handle other errors
-      throw new Error('Error checking name availability');
+      throw new Error('Error checking name availability')
     }
   } catch (error) {
-    console.error('Error checking name:', error);
-    throw error;
+    console.error('Error checking name:', error)
+    throw error
   }
 }
 
