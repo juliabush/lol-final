@@ -6,11 +6,10 @@ import { PuuidCopyBox } from '@/components/puuid-copy-box'
 
 async function getAccountByPuuid(puuid: string) {
   try {
-    // Make sure we're using the correct URL format
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const url = new URL(`/api/puuid/${puuid}`, baseUrl);
+    // Use relative URL instead of constructing with baseUrl
+    const url = `/api/puuid/${puuid}`;
     
-    const response = await fetch(url.toString(), { 
+    const response = await fetch(url, { 
       next: { revalidate: 3600 } // Cache for 1 hour
     });
 

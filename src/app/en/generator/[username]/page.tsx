@@ -35,38 +35,25 @@ function generateRandomTaglines(count: number = 10): string[] {
  * Checks if a name and tagline combination is available
  */
 async function checkNameAvailability(username: string, tagline: string) {
-  try {
-    const response = await fetch(
-      `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(username)}/${tagline}`,
-      {
-        headers: {
-          'X-Riot-Token': process.env.RIOT_API_KEY || ''
-        }
-      }
-    )
-    
-    if (!response.ok) {
-      // If 404, the name is available
+    try {
+      const url = `/api/account/${encodeURIComponent(username)}/${tagline}`;
+      const response = await fetch(url, { next: { revalidate: 3600 } });
+      
       if (response.status === 404) {
-        return { isAvailable: true, account: null }
+        // Name is available
+        return { isAvailable: true, account: null };
+      } else if (response.ok) {
+        // Name is taken
+        const account = await response.json();
+        return { isAvailable: false, account };
+      } else {
+        throw new Error('Failed to check name availability');
       }
-      throw new Error('Failed to check name availability')
+    } catch (error) {
+      console.error('Error checking name availability:', error);
+      return { isAvailable: false, account: null };
     }
-    
-    // If we get a successful response, the account exists
-    const account = await response.json()
-    return { isAvailable: false, account }
-  } catch (error) {
-    // If the API returns 404, the name is available
-    if (error instanceof Error && error.message.includes('404')) {
-      return { isAvailable: true, account: null }
-    }
-    
-    // For other errors, assume the name is unavailable
-    console.error('Error checking name availability:', error)
-    return { isAvailable: false, account: null }
   }
-}
 
 export default async function GeneratorResult({
   params
