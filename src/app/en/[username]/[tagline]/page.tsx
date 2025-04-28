@@ -30,15 +30,15 @@ async function checkNameAvailability(username: string, tagline: string) {
   }
 }
 
-export default async function NameResult(
-  props: { 
-    params: { username: string; tagline: string }
-  }
-) {
-  const { username, tagline } = props.params
+export default async function NameResult({
+  params
+}: {
+  params: Promise<{ username: string; tagline: string }>
+}) {
+  const { username, tagline } = await params
   const decodedUsername = decodeURIComponent(username)
 
-  // Check name availability on every page load
+  // Check name availability on every page loaśd
   const { isAvailable, account } = await checkNameAvailability(decodedUsername, tagline);
 
   return (
