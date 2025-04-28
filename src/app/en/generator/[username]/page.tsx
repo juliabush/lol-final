@@ -68,12 +68,12 @@ async function checkNameAvailability(username: string, tagline: string) {
   }
 }
 
-export default async function GeneratorResult(
-  props: { 
-    params: { username: string }
-  }
-) {
-  const { username } = props.params
+export default async function GeneratorResult({
+  params
+}: {
+  params: { username: string }
+}) {
+  const { username } = params
   const decodedUsername = decodeURIComponent(username)
 
   // Generate 10 random taglines with lengths between 3-5 characters
