@@ -60,11 +60,8 @@ async function getPlayerData(puuid: string) {
     }
 
     const platformId = matchId.split('_')[0]
-    if (!platformId || !platformToRegion[platformId]) {
-      throw new Error(`Invalid platform ID: ${platformId}`)
-    }
 
-    const summonerRegion = platformToRegion[platformId]
+    const summonerRegion = platformId.toLowerCase()
 
     // Step 3: Fetch match details and summoner info in parallel
     const [matchDetailsResponse, summonerResponse] = await Promise.all([
