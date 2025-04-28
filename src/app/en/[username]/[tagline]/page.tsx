@@ -30,18 +30,17 @@ async function checkNameAvailability(username: string, tagline: string) {
   }
 }
 
-export default async function NameResult({ 
-  params
-}: { 
-  params: { username: string; tagline: string }
-}) {
-  params = await params
-  const { username, tagline } = params
+export default async function NameResult(
+  props: { 
+    params: { username: string; tagline: string }
+  }
+) {
+  const { username, tagline } = props.params
   const decodedUsername = decodeURIComponent(username)
-  
+
   // Check name availability on every page load
   const { isAvailable, account } = await checkNameAvailability(decodedUsername, tagline);
-  
+
   return (
     <SearchContainer title="LoL and Riot Name Checker">
       <NameChecker 

@@ -68,18 +68,17 @@ async function checkNameAvailability(username: string, tagline: string) {
   }
 }
 
-export default async function GeneratorResult({ 
-  params 
-}: { 
-  params: { username: string } 
-}) {
-  params = await params
-  const { username } = params
+export default async function GeneratorResult(
+  props: { 
+    params: { username: string }
+  }
+) {
+  const { username } = props.params
   const decodedUsername = decodeURIComponent(username)
-  
+
   // Generate 10 random taglines with lengths between 3-5 characters
   const taglines = generateRandomTaglines(10)
-  
+
   // Check availability for each tagline
   const results = await Promise.all(
     taglines.map(async (tagline) => {
@@ -87,10 +86,10 @@ export default async function GeneratorResult({
       return { tagline, isAvailable }
     })
   )
-  
+
   // Filter available taglines
   const availableTaglines = results.filter(result => result.isAvailable)
-  
+
   return (
     <SearchContainer title="LoL and Riot Tagline Generator">
       <NameGenerator defaultUsername={decodedUsername} />

@@ -25,14 +25,15 @@ async function getAccountByPuuid(puuid: string) {
   }
 }
 
-export default async function TrackerResult({ 
-  params 
-}: { 
-  params?: { puuid?: string } 
-}) {
+export default async function TrackerResult(
+  props: { 
+    params?: Promise<{ puuid?: string }> 
+  }
+) {
+  const params = await props.params;
   params = await params
   const puuid = params?.puuid
-  
+
   if (!puuid) {
     return (
       <SearchContainer title="LoL and Riot Account Tracker">
