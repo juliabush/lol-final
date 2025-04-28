@@ -3,6 +3,7 @@ import { SearchContainer } from '@/components/search-container'
 import { AccountTracker } from '@/components/account-tracker'
 import { PlayerInfo } from '@/components/player-info'
 import { PuuidCopyBox } from '@/components/puuid-copy-box'
+import { headers } from 'next/headers'
 
 async function getAccountByPuuid(puuid: string) {
   try {

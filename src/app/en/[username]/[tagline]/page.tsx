@@ -2,6 +2,7 @@ import { NameChecker } from '@/components/name-checker'
 import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
+import { headers } from 'next/headers';
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {

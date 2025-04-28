@@ -2,6 +2,7 @@ import { SearchContainer } from '@/components/search-container'
 import { NameGenerator } from '@/components/name-generator'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { headers } from 'next/headers'
 
 /**
  * Generates a random alphanumeric tagline of random length between min and max
