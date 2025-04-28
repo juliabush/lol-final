@@ -5,13 +5,9 @@ import Link from 'next/link'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    // Make sure we're using the correct URL format
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const url = new URL(`/api/account/${encodeURIComponent(username)}/${tagline}`, baseUrl);
-    
-    const response = await fetch(url.toString(), { 
-      next: { revalidate: 3600 } // Cache for 1 hour
-    });
+    // Instead of constructing a full URL with a base
+    const url = `/api/account/${encodeURIComponent(username)}/${tagline}`;
+    const response = await fetch(url, { next: { revalidate: 3600 } });
 
     if (response.status === 404) {
       // Name is available
