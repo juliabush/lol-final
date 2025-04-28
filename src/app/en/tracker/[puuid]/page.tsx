@@ -8,11 +8,11 @@ import { headers } from 'next/headers'
 async function getAccountByPuuid(puuid: string) {
   try {
     // Use relative URL instead of constructing with baseUrl
-    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-    const host = headers().get('host'); // Get the host dynamically
-  
-    const url = new URL(`${protocol}://${host}/api/puuid/${puuid}`);
-    
+    const baseUrl = process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
+
+    const url = `${baseUrl}/api/puuid/${puuid}`;
     const response = await fetch(url, { 
       next: { revalidate: 3600 } // Cache for 1 hour
     });

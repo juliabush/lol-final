@@ -6,10 +6,11 @@ import { headers } from 'next/headers';
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-    const host = headers().get('host'); // Get the host dynamically
+    const baseUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000';
   
-    const url = `${protocol}://${host}/api/account/${encodeURIComponent(username)}/${tagline}`;
+    const url = `${baseUrl}/api/account/${encodeURIComponent(username)}/${tagline}`;
   
     const response = await fetch(url, { next: { revalidate: 3600 } });
 
