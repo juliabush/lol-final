@@ -36,28 +36,31 @@ function generateRandomTaglines(count: number = 10): string[] {
  * Checks if a name and tagline combination is available
  */
 async function checkNameAvailability(username: string, tagline: string) {
-    try {
-        const baseUrl = process.env.VERCEL_URL 
-        ? `https://${process.env.VERCEL_URL}`
-        : 'http://localhost:3000';
-    
-      const url = `${baseUrl}/api/account/${encodeURIComponent(username)}/${tagline}`;
-      const response = await fetch(url);
-      if (response.status === 404) {
-        // Name is available
-        return { isAvailable: true, account: null };
-      } else if (response.ok) {
-        // Name is taken
-        const account = await response.json();
-        return { isAvailable: false, account };
-      } else {
-        throw new Error('Failed to check name availability');
+  const apiKey = process.env.RIOT_API_KEY
+  if (!apiKey) throw new Error('API key not configured')
+
+  try {
+    const response = await fetch(
+      `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(username)}/${tagline}`,
+      {
+        headers: {
+          'X-Riot-Token': apiKey
+        }
       }
-    } catch (error) {
-      console.error('Error checking name availability:', error);
-      return { isAvailable: false, account: null };
+    )
+
+    if (!response.ok) {
+      if (response.status === 404) return { isAvailable: true, account: null }
+      throw new Error(`API error: ${response.status}`)
     }
+
+    const account = await response.json()
+    return { isAvailable: false, account }
+  } catch (error) {
+    console.error('Error checking name availability:', error)
+    return { isAvailable: false, account: null }
   }
+}
 
 export default async function GeneratorResult({
   params

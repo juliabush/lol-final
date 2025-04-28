@@ -3,26 +3,30 @@ import { SearchContainer } from '@/components/search-container'
 import { AccountTracker } from '@/components/account-tracker'
 import { PlayerInfo } from '@/components/player-info'
 import { PuuidCopyBox } from '@/components/puuid-copy-box'
-import { headers } from 'next/headers'
 
 async function getAccountByPuuid(puuid: string) {
-  try {
-    // Use relative URL instead of constructing with baseUrl
-    const baseUrl = process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000';
+  const apiKey = process.env.RIOT_API_KEY
+  if (!apiKey) throw new Error('API key not configured')
 
-    const url = `${baseUrl}/api/puuid/${puuid}`;
-    const response = await fetch(url);
+  try {
+    const response = await fetch(
+      `https://americas.api.riotgames.com/riot/account/v1/accounts/by-puuid/${puuid}`,
+      {
+        headers: {
+          'X-Riot-Token': apiKey
+        }
+      }
+    )
 
     if (!response.ok) {
-      throw new Error('Account not found');
+      if (response.status === 404) return null
+      throw new Error(`API error: ${response.status}`)
     }
 
-    return response.json();
+    return response.json()
   } catch (error) {
-    console.error('Error fetching account:', error);
-    throw error;
+    console.error('Error fetching account:', error)
+    throw error
   }
 }
 
@@ -43,6 +47,7 @@ export default async function TrackerResult({
 
   try {
     const account = await getAccountByPuuid(puuid)
+    if (!account) return notFound()
     
     return (
       <SearchContainer title="LoL and Riot Account Tracker">
