@@ -11,7 +11,7 @@ async function getAccountByPuuid(puuid: string) {
     const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
     const host = headers().get('host'); // Get the host dynamically
   
-    const url = `${protocol}://${host}/api/puuid/${puuid}`;
+    const url = new URL(`${protocol}://${host}/api/puuid/${puuid}`);
     
     const response = await fetch(url, { 
       next: { revalidate: 3600 } // Cache for 1 hour
