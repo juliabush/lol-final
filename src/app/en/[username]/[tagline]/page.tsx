@@ -25,7 +25,7 @@ async function checkNameAvailability(username: string, tagline: string) {
       return { isAvailable: false, account }
     } else {
       // Handle other errors
-      throw new Error('Error checking name availability')
+      throw new Error(response.statusText)
     }
   } catch (error) {
     console.error('Error checking name:', error)
