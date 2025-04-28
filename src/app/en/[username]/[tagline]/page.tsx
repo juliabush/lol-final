@@ -5,10 +5,7 @@ import Link from 'next/link'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const baseUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000';
-    const url = `${baseUrl}/api/account/${encodeURIComponent(username)}/${tagline}`
+    const url = `/api/account/${encodeURIComponent(username)}/${tagline}`
     
     const response = await fetch(url, {
       cache: 'no-store'
