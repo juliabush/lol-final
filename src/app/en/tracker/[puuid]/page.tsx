@@ -28,9 +28,9 @@ async function getAccountByPuuid(puuid: string) {
 export default async function TrackerResult({
   params
 }: {
-  params: { puuid: string }
+  params: Promise<{ puuid: string }>
 }) {
-  const { puuid } = params
+  const { puuid } = await params
 
   if (!puuid) {
     return (

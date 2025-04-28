@@ -71,9 +71,9 @@ async function checkNameAvailability(username: string, tagline: string) {
 export default async function GeneratorResult({
   params
 }: {
-  params: { username: string }
+  params: Promise<{ username: string }>
 }) {
-  const { username } = params
+  const { username } = await params
   const decodedUsername = decodeURIComponent(username)
 
   // Generate 10 random taglines with lengths between 3-5 characters
