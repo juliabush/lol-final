@@ -260,11 +260,11 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           <div className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-red-500 bg-gray-300">
             {/* Placeholder for profile image */}
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <h3 className="text-lg font-medium">{gameName}#{tagLine}</h3>
+              <h3 className="text-lg font-medium truncate">{gameName}#{tagLine}</h3>
             </div>
-            <p className="text-base text-gray-500">No League of Legends data found. This player may be active on other Riot games.</p>
+            <p className="text-base text-gray-500 break-words">No League of Legends data found. This player may be active on other Riot games.</p>
           </div>
         </div>
       </div>
