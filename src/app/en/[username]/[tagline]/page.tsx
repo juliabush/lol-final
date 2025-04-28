@@ -2,14 +2,25 @@ import { NameChecker } from '@/components/name-checker'
 import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
-import { getAccountByRiotId } from '@/lib/riot-api'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const account = await getAccountByRiotId(username, tagline)
-    return {
-      isAvailable: !account,
-      account
+    const url = `/api/account/${encodeURIComponent(username)}/${tagline}`
+    
+    const response = await fetch(url, {
+      cache: 'no-store'
+    })
+
+    if (response.status === 404) {
+      // Name is available
+      return { isAvailable: true, account: null }
+    } else if (response.ok) {
+      // Name is taken
+      const account = await response.json()
+      return { isAvailable: false, account }
+    } else {
+      // Handle other errors
+      throw new Error(response.statusText)
     }
   } catch (error) {
     console.error('Error checking name:', error)
@@ -20,7 +31,7 @@ async function checkNameAvailability(username: string, tagline: string) {
 export default async function NameResult({
   params
 }: {
-  params: Promise<{ username: string; tagline: string }>
+  params: { username: string; tagline: string }
 }) {
   const { username, tagline } = await params
   const decodedUsername = decodeURIComponent(username)
@@ -55,15 +66,6 @@ export default async function NameResult({
                 puuid={account.puuid}
                 gameName={account.gameName}
                 tagLine={account.tagLine}
-                summonerInfo={{
-                  id: '',
-                  name: account.gameName,
-                  profileIconId: 0,
-                  summonerLevel: 0
-                }}
-                region="na1"
-                platformId="na1"
-                lastMatchTime={null}
               />
               
               <Link 
