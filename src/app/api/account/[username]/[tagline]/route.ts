@@ -1,10 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { username: string; tagline: string } }
 ) {
-  params = await params
   const { username, tagline } = params
   
   const apiKey = process.env.RIOT_API_KEY
