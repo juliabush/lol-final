@@ -8,17 +8,19 @@ import { getAccountByRiotId, RiotAccount } from '@/lib/riot-api'
 async function checkNameAvailability(username: string, tagline: string) {
   try {
     const account = await getAccountByRiotId(username, tagline)
-    
-    if (!account) {
-      // Name is available
-      return { isAvailable: true, account: null }
-    } else {
-      // Name is taken
-      return { isAvailable: false, account }
+    return { 
+      isAvailable: !account, 
+      account,
+      error: false 
     }
   } catch (error) {
     console.error('Error checking name:', error)
-    throw error
+    return { 
+      isAvailable: false, 
+      account: null, 
+      error: true,
+      errorMessage: 'Failed to check name availability. Please try again later.'
+    }
   }
 }
 
@@ -29,14 +31,7 @@ export default async function NameResult({
 }) {
   const { username, tagline } = await params
   const decodedUsername = decodeURIComponent(username)
-
-  let result: { isAvailable: boolean; account: RiotAccount | null } | { error: boolean }
-  try {
-    result = await checkNameAvailability(decodedUsername, tagline)
-  } catch (error) {
-    console.error('Error checking name availability:', error)
-    result = { error: true }
-  }
+  const result = await checkNameAvailability(decodedUsername, tagline)
 
   return (
     <SearchContainer title="LoL and Riot Name Checker">
@@ -48,8 +43,8 @@ export default async function NameResult({
       <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100">
         {result.error ? (
           <div className="text-red-600">
-            <h2>We couldn't connect to Riot servers.</h2>
-            <p>Please try again later or contact support if the problem persists.</p>
+            <h2>Unable to Check Name</h2>
+            <p>{result.errorMessage}</p>
           </div>
         ) : (
           <>
