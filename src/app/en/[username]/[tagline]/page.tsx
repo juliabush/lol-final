@@ -3,7 +3,7 @@ import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
 import { GitCommitVertical } from 'lucide-react'
-import { getAccountByRiotId } from '@/lib/riot-api'
+import { getAccountByRiotId, RiotAccount } from '@/lib/riot-api'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
@@ -30,12 +30,13 @@ export default async function NameResult({
   const { username, tagline } = await params
   const decodedUsername = decodeURIComponent(username)
 
-  // Make the API call first
-  const result = await checkNameAvailability(decodedUsername, tagline)
-    .catch(error => {
-      console.error('Error checking name availability:', error)
-      return { error: true }
-    })
+  let result: { isAvailable: boolean; account: RiotAccount | null } | { error: boolean }
+  try {
+    result = await checkNameAvailability(decodedUsername, tagline)
+  } catch (error) {
+    console.error('Error checking name availability:', error)
+    result = { error: true }
+  }
 
   return (
     <SearchContainer title="LoL and Riot Name Checker">
