@@ -57,8 +57,8 @@ async function checkNameAvailability(username: string, tagline: string) {
     const account = await response.json()
     return { isAvailable: false, account }
   } catch (error) {
-    console.error('Error checking name availability:', error)
-    return { isAvailable: false, account: null }
+    console.error('Error checking name availability inner:', error)
+    throw error
   }
 }
 
@@ -76,41 +76,57 @@ export default async function GeneratorResult({
   // Check availability for each tagline
   const results = await Promise.all(
     taglines.map(async (tagline) => {
-      const { isAvailable } = await checkNameAvailability(decodedUsername, tagline)
-      return { tagline, isAvailable }
+      try {
+        const { isAvailable } = await checkNameAvailability(decodedUsername, tagline)
+        return { tagline, isAvailable }
+      } catch (error) {
+        console.error('Error checking name availability:', error)
+        return { tagline, error: true }
+      }
     })
   )
 
-  // Filter available taglines
-  const availableTaglines = results.filter(result => result.isAvailable)
+  // Check if any requests resulted in an error
+  const hasError = results.some(result => 'error' in result)
+  
+  // Filter available taglines (only if no errors occurred)
+  const availableTaglines = hasError ? [] : results.filter(result => result.isAvailable)
 
   return (
     <SearchContainer title="LoL and Riot Tagline Generator">
       <NameGenerator defaultUsername={decodedUsername} />
       
       <div className="pt-2 pb-4 pl-4 pr-4 rounded-lg bg-gray-100">
-        <h2>
-          Available taglines for {decodedUsername}
-        </h2>
-        
-        {availableTaglines.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {availableTaglines.map(({ tagline }) => (
-              <Link 
-                key={tagline}
-                href={`/en/${encodeURIComponent(decodedUsername)}/${tagline}`}
-                className="p-4 bg-white rounded-lg text-center hover:bg-blue-50 transition-colors"
-              >
-                <span className="text-lg font-medium">{tagline}</span>
-              </Link>
-            ))}
+        {hasError ? (
+          <div className="text-red-600">
+            <h2>We couldn't connect to Riot servers.</h2>
+            <p>Please try again later or contact support if the problem persists..</p>
           </div>
         ) : (
-          <p className="text-center py-6">
-            No available taglines found. Try a different username or generate more options.
-          </p>
+          <>
+            <h2>
+              Available taglines for {decodedUsername}
+            </h2>
+            
+            {availableTaglines.length > 0 ? (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {availableTaglines.map(({ tagline }) => (
+                  <Link 
+                    key={tagline}
+                    href={`/en/${encodeURIComponent(decodedUsername)}/${tagline}`}
+                    className="p-4 bg-white rounded-lg text-center hover:bg-blue-50 transition-colors"
+                  >
+                    <span className="text-lg font-medium">{tagline}</span>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <p className="text-center py-6">
+                No available taglines found. Try a different username or generate more options.
+              </p>
+            )}
+          </>
         )}
-        
       </div>
     </SearchContainer>
   )
