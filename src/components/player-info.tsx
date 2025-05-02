@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { formatDistanceToNow } from 'date-fns'
 import { Loader2 } from 'lucide-react'
+import Link from 'next/link'
 
 interface PlayerInfoProps {
   puuid: string
@@ -257,14 +258,14 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
     return (
       <div className="bg-gray-100 rounded-lg">
         <div className="flex items-center gap-6">
-          <div className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-red-500 bg-gray-300">
+          <div className="relative w-20 h-20 flex-shrink-0 rounded-full overflow-hidden border-3 border-red-500 bg-gray-300">
             {/* Placeholder for profile image */}
           </div>
-          <div className="min-w-0">
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-medium truncate">{gameName}#{tagLine}</h3>
             </div>
-            <p className="text-base text-gray-500 break-words">No League of Legends data found. This player may be active on other Riot games.</p>
+            <p className="text-base text-gray-500 break-words">No LoL data found.</p>
           </div>
         </div>
       </div>
@@ -289,7 +290,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           />
         </div>
         <div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-star gap-3">
             <h3 className="text-lg font-medium">{gameName || summonerInfo.name}#{tagLine}</h3>
             <span className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">
               {regionDisplay}

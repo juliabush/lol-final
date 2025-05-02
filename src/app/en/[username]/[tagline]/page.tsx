@@ -56,15 +56,17 @@ export default async function NameResult({
         {!isAvailable && account && (
           <>
             <div className="flex items-center justify-between p-8">
-              <PlayerInfo 
-                puuid={account.puuid}
-                gameName={account.gameName}
-                tagLine={account.tagLine}
-              />
+              <div className="flex-1">
+                <PlayerInfo 
+                  puuid={account.puuid}
+                  gameName={account.gameName}
+                  tagLine={account.tagLine}
+                />
+              </div>
               
               <Link 
                 href={`/en/tracker/${account.puuid}`}
-                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                className="ml-4 w-[140px] inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
               >
                 Track account
               </Link>
