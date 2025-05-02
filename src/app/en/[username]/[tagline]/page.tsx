@@ -19,7 +19,6 @@ async function checkNameAvailability(username: string, tagline: string) {
       isAvailable: false, 
       account: null, 
       error: true,
-      errorMessage: 'Failed to check name availability. Please try again later.'
     }
   }
 }
@@ -43,8 +42,8 @@ export default async function NameResult({
       <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100">
         {result.error ? (
           <div className="text-red-600">
-            <h2>Unable to Check Name</h2>
-            <p>{result.errorMessage}</p>
+            <h2>We couldn't connect to Riot servers.</h2>
+            <p>Please try again later or contact support if the problem persists.</p>
           </div>
         ) : (
           <>
