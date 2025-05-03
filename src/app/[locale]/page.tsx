@@ -6,15 +6,16 @@ import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 
 export default async function Home({
-  params: { locale }
+  params
 }: {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params
   const t = await getTranslations('checker')
 
   return (
     <SearchContainer title={t('title')} activeTab="checker">
-      <NameChecker locale={locale} />
+      <NameChecker/>
       <h2>{t('checkGenerateTrack')}</h2>
       <p>{t('toolDescription')}</p>
 
