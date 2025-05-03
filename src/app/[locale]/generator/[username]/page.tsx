@@ -3,6 +3,7 @@ import { NameGenerator } from '@/components/name-generator'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { headers } from 'next/headers'
+import { getTranslations } from 'next-intl/server'
 
 /**
  * Generates a random alphanumeric tagline of random length between min and max
@@ -65,10 +66,11 @@ async function checkNameAvailability(username: string, tagline: string) {
 export default async function GeneratorResult({
   params
 }: {
-  params: Promise<{ username: string }>
+  params: Promise<{ username: string; locale: string }>
 }) {
-  const { username } = await params
+  const { username, locale } = await params
   const decodedUsername = decodeURIComponent(username)
+  const t = await getTranslations('generator')
 
   // Generate 10 random taglines with lengths between 3-5 characters
   const taglines = generateRandomTaglines(10)
@@ -93,19 +95,19 @@ export default async function GeneratorResult({
   const availableTaglines = hasError ? [] : results.filter(result => result.isAvailable)
 
   return (
-    <SearchContainer title="LoL and Riot Tagline Generator">
+    <SearchContainer title={t('title')}>
       <NameGenerator defaultUsername={decodedUsername} />
       
       <div className="pt-2 pb-4 pl-4 pr-4 rounded-lg bg-gray-100">
         {hasError ? (
           <div className="text-red-600">
-            <h2>We couldn't connect to Riot servers.</h2>
-            <p>Please try again later or contact support if the problem persists..</p>
+            <h2>{t('connectionError')}</h2>
+            <p>{t('tryAgain')}</p>
           </div>
         ) : (
           <>
             <h2>
-              Available taglines for {decodedUsername}
+              {t('availableTaglines', { username: decodedUsername })}
             </h2>
             
             {availableTaglines.length > 0 ? (
@@ -113,7 +115,7 @@ export default async function GeneratorResult({
                 {availableTaglines.map(({ tagline }) => (
                   <Link 
                     key={tagline}
-                    href={`/en/${encodeURIComponent(decodedUsername)}/${tagline}`}
+                    href={`/${locale}/${encodeURIComponent(decodedUsername)}/${tagline}`}
                     className="p-4 bg-white rounded-lg text-center hover:bg-blue-50 transition-colors"
                   >
                     <span className="text-lg font-medium">{tagline}</span>
@@ -122,7 +124,7 @@ export default async function GeneratorResult({
               </div>
             ) : (
               <p className="text-center py-6">
-                No available taglines found. Try a different username or generate more options.
+                {t('noTaglinesFound')}
               </p>
             )}
           </>

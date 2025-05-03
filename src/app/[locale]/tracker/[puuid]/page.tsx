@@ -3,6 +3,7 @@ import { SearchContainer } from '@/components/search-container'
 import { AccountTracker } from '@/components/account-tracker'
 import { PlayerInfo } from '@/components/player-info'
 import { PuuidCopyBox } from '@/components/puuid-copy-box'
+import { getTranslations } from 'next-intl/server'
 
 async function getAccountByPuuid(puuid: string) {
   const apiKey = process.env.RIOT_API_KEY
@@ -33,13 +34,14 @@ async function getAccountByPuuid(puuid: string) {
 export default async function TrackerResult({
   params
 }: {
-  params: Promise<{ puuid: string }>
+  params: Promise<{ puuid: string; locale: string }>
 }) {
-  const { puuid } = await params
+  const { puuid, locale } = await params
+  const t = await getTranslations('tracker')
 
   if (!puuid) {
     return (
-      <SearchContainer title="LoL and Riot Account Tracker">
+      <SearchContainer title={t('title')}>
         <AccountTracker />
       </SearchContainer>
     )
@@ -48,7 +50,7 @@ export default async function TrackerResult({
   const result = await getAccountByPuuid(puuid)
 
   return (
-    <SearchContainer title="LoL and Riot Account Tracker">
+    <SearchContainer title={t('title')}>
       <AccountTracker 
         defaultUsername={result?.gameName}
         defaultTagline={result?.tagLine}
@@ -57,15 +59,18 @@ export default async function TrackerResult({
       <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100">
         {result.error ? (
           <div className="text-red-600">
-            <h2>We couldn't connect to Riot servers.</h2>
-            <p>Please try again later or contact support if the problem persists.</p>
+            <h2>{t('connectionError')}</h2>
+            <p>{t('tryAgain')}</p>
           </div>
         ) : !result ? (
           notFound()
         ) : (
           <>
             <h2>
-              Player {result.gameName}#{result.tagLine} found!
+              {t('playerFound', { 
+                gameName: result.gameName, 
+                tagLine: result.tagLine 
+              })}
             </h2>
             
             <div className="p-8 flex">
@@ -76,9 +81,9 @@ export default async function TrackerResult({
               />
             </div>
             <div className="mt-4 space-y-2">
-              <p>To track this user, save their permanent user ID (PUUID):</p>
+              <p>{t('savePuuid')}</p>
               <PuuidCopyBox puuid={result.puuid} />
-              <p>Or just bookmark this page to check on this account anytime!</p>
+              <p>{t('bookmarkPage')}</p>
             </div>
           </>
         )}

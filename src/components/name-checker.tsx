@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
@@ -14,6 +14,8 @@ export function NameChecker({
   defaultTagline?: string 
 }) {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
   const [username, setUsername] = useState(defaultUsername)
   const [tagline, setTagline] = useState(defaultTagline)
   const [isLoading, setIsLoading] = useState(false)
@@ -54,7 +56,7 @@ export function NameChecker({
     setIsLoading(true)
     try {
       // Navigate directly to the name check page
-      router.push(`/en/${encodeURIComponent(username)}/${tagline}`)
+      router.push(`/${locale}/${encodeURIComponent(username)}/${tagline}`)
     } catch (error) {
       console.error('Error navigating to name check page:', error)
     } finally {

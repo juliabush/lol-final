@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { formatDistanceToNow } from 'date-fns'
 import { Loader2 } from 'lucide-react'
@@ -78,6 +79,7 @@ const platformToDisplayName: Record<string, string> = {
 }
 
 export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
+  const t = useTranslations('tracker')
   console.log('PlayerInfo component mounted with:', { puuid, gameName, tagLine })
   
   const [playerData, setPlayerData] = useState<PlayerData>({
@@ -246,7 +248,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
                 <Loader2 className="animate-spin h-4 w-4" />
               </span>
             </div>
-            <p className="text-base text-gray-600">Loading player information...</p>
+            <p className="text-base text-gray-600">{t('loadingPlayer')}</p>
           </div>
         </div>
       </div>
@@ -265,7 +267,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-medium truncate">{gameName}#{tagLine}</h3>
             </div>
-            <p className="text-base text-gray-500 break-words">No LoL data found.</p>
+            <p className="text-base text-gray-500 break-words">{t('noLolData')}</p>
           </div>
         </div>
       </div>
@@ -296,13 +298,17 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
               {regionDisplay}
             </span>
           </div>
-          <p className="text-base text-gray-600">Level {summonerInfo.summonerLevel}</p>
+          <p className="text-base text-gray-600">
+            {t('level', { level: summonerInfo.summonerLevel })}
+          </p>
           {lastMatchTime && (
             <p 
               className="text-sm text-gray-500" 
               title={new Date(lastMatchTime).toLocaleString()}
             >
-              Last match: {formatDistanceToNow(new Date(lastMatchTime), { addSuffix: true })}
+              {t('lastMatch', { 
+                time: formatDistanceToNow(new Date(lastMatchTime), { addSuffix: true })
+              })}
             </p>
           )}
         </div>

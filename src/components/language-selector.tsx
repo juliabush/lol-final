@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
 import { 
@@ -10,44 +10,29 @@ import {
   SelectTrigger,
   SelectValue 
 } from '@/components/ui/select'
-
-const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
-  { code: 'fr', name: 'Français' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'ko', name: 'Korean' }
-]
+import { routing } from '@/i18n/routing'
 
 export function LanguageSelector() {
   const router = useRouter()
+  const locale = useLocale()
   
   const handleLanguageChange = (value: string) => {
-    // Get current path
     const path = window.location.pathname
-    
-    // Replace language code in path or add it if not present
-    const newPath = path.replace(/^\/[a-z]{2}\//, `/${value}/`)
-    
-    // If path didn't change, it means there was no language code
-    const redirectPath = newPath === path 
-      ? `/${value}${path === '/' ? '' : path}`
-      : newPath
-      
+    const redirectPath = path.replace(/^\/[a-z]{2}/, `/${value}`)
     router.push(redirectPath)
   }
   
   return (
-    <Select onValueChange={handleLanguageChange} defaultValue="en">
+    <Select onValueChange={handleLanguageChange} defaultValue={locale}>
       <SelectTrigger 
         className="w-[110px] bg-white border-none text-gray-800 focus:ring-0"
       >
         <SelectValue placeholder="Language" />
       </SelectTrigger>
       <SelectContent className="bg-white text-gray-800">
-        {languages.map(lang => (
-          <SelectItem key={lang.code} value={lang.code}>
-            {lang.name}
+        {routing.locales.map(locale => (
+          <SelectItem key={locale} value={locale}>
+            {locale.toUpperCase()}
           </SelectItem>
         ))}
       </SelectContent>

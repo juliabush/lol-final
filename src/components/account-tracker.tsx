@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
@@ -14,6 +15,10 @@ export function AccountTracker({
   defaultTagline?: string 
 }) {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
+  const t = useTranslations('tracker')
+  
   const [username, setUsername] = useState(defaultUsername)
   const [tagline, setTagline] = useState(defaultTagline)
   const [showTooltip, setShowTooltip] = useState(false)
@@ -66,10 +71,13 @@ export function AccountTracker({
 
       const data = await response.json()
       if (data.puuid) {
-        router.push(`/en/tracker/${data.puuid}`)
+        router.push(`/${locale}/tracker/${data.puuid}`)
       }
     } catch (error) {
-      setError(`Player ${username}#${tagline} not found`)
+      setError(t('playerNotFound', { 
+        gameName: username, 
+        tagLine: tagline 
+      }))
     } finally {
       setIsLoading(false)
     }
