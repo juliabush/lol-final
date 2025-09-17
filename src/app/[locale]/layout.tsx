@@ -19,6 +19,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "LolNames.gg",
+  description: "League of Legends Name Checker, Name Generator, Account Tracker, Leaderboard and Match Lookup.",
+  icons: {
+    icon: "/favicon.png",
+  }
+}
+
 export default async function LocaleLayout({
   children,
   params
