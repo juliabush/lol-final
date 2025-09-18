@@ -278,6 +278,8 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
   const iconUrl = summonerInfo.profileIconId && version 
     ? `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${summonerInfo.profileIconId}.png`
     : '/profile.jpg'
+
+  console.log('Icon URL:', iconUrl)
   
   // Display the human-readable region based on the platform ID
   const regionDisplay = platformId ? (platformToDisplayName[platformId] || platformId) : 'Unknown'
