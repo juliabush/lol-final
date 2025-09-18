@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
@@ -16,6 +17,8 @@ export function NameChecker({
   const router = useRouter()
   const params = useParams()
   const locale = params.locale as string
+  const tCommon = useTranslations('common')
+  const tChecker = useTranslations('checker')
   const [username, setUsername] = useState(defaultUsername)
   const [tagline, setTagline] = useState(defaultTagline)
   const [isLoading, setIsLoading] = useState(false)
@@ -69,40 +72,40 @@ export function NameChecker({
       <div className="flex gap-4 mb-6">
         <div className="flex-1">
           <label htmlFor="username" className="block text-sm font-medium mb-1">
-            In-game name
+            {tChecker('inGameName')}
           </label>
           <Input
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
+            placeholder={tChecker('enterUsername')}
             required
           />
         </div>
 
         <div className="relative w-24">
           <label htmlFor="tagline" className="block text-sm font-medium mb-1">
-            Tagline
+            {tChecker('tagline')}
           </label>
           <Input
             id="tagline"
             value={tagline}
             onChange={handleTaglineChange}
-            placeholder="TAG"
+            placeholder={tChecker('tagPlaceholder')}
             maxLength={5}
             minLength={3}
             required
           />
           {showTooltip && (
             <div className="absolute top-full mt-2 px-2 py-1 text-xs bg-destructive text-white rounded shadow-sm whitespace-nowrap">
-              Only letters and numbers allowed
+              {tChecker('onlyLettersNumbers')}
             </div>
           )}
         </div>
 
         <div className="flex items-end">
           <Button type="submit" disabled={isLoading}>
-            {isLoading ? <Loader2 className="animate-spin" /> : 'Check'}
+            {isLoading ? <Loader2 className="animate-spin" /> : tCommon('check')}
           </Button>
         </div>
       </div>
