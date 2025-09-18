@@ -2,24 +2,39 @@ import { NameChecker } from '@/components/name-checker'
 import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
-import { getAccountByRiotId } from '@/lib/riot-api'
 import { getTranslations } from 'next-intl/server'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const account = await getAccountByRiotId(username, tagline)
-    return { 
-      isAvailable: !account, 
+    const response = await fetch('/api/riot', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        action: 'getAccountByRiotId',
+        username,
+        tagline,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch account data');
+    }
+
+    const account = await response.json();
+    return {
+      isAvailable: !account,
       account,
-      error: false 
-    }
+      error: false,
+    };
   } catch (error) {
-    console.error('Error checking name:', error)
-    return { 
-      isAvailable: false, 
-      account: null, 
+    console.error('Error checking name:', error);
+    return {
+      isAvailable: false,
+      account: null,
       error: true,
-    }
+    };
   }
 }
 

@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { formatDistanceToNow } from 'date-fns'
 import { Loader2 } from 'lucide-react'
 import Link from 'next/link'
-import { getMatches, getSummoner, getMatch } from '@/lib/riot-api';
 
 interface PlayerInfoProps {
   puuid: string
@@ -125,7 +124,23 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
         for (const region of regions) {
           try {
             console.log(`Checking matches in region: ${region}`);
-            const matchIds = await getMatches(region, puuid);
+            const response = await fetch('/api/riot', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                action: 'getMatches',
+                region,
+                puuid,
+              }),
+            });
+
+            if (!response.ok) {
+              throw new Error('Failed to fetch matches');
+            }
+
+            const matchIds = await response.json();
             console.log(`Match IDs from ${region}:`, matchIds);
 
             if (matchIds.length > 0) {
@@ -160,15 +175,40 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
 
         console.log(`Fetching match details and summoner info in parallel`);
 
-        const [matchDetails, summonerData] = await Promise.all([
-          getMatch(routingRegion, matchId),
-          getSummoner(summonerRegion, puuid)
+        const [matchDetailsResponse, summonerResponse] = await Promise.all([
+          fetch('/api/riot', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              action: 'getMatch',
+              region: routingRegion,
+              matchId,
+            }),
+          }),
+          fetch('/api/riot', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              action: 'getSummoner',
+              region: summonerRegion,
+              puuid,
+            }),
+          }),
         ]);
 
-        console.log('Match details received');
+        if (!matchDetailsResponse.ok || !summonerResponse.ok) {
+          throw new Error('Failed to fetch match details or summoner info');
+        }
+
+        const matchDetails = await matchDetailsResponse.json();
         const lastMatchTime = matchDetails.info.gameEndTimestamp;
         console.log('Last match time:', new Date(lastMatchTime).toISOString());
 
+        const summonerData = await summonerResponse.json();
         console.log('Summoner data received');
 
         setPlayerData({
@@ -176,13 +216,13 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
             id: summonerData.id,
             name: summonerData.name,
             profileIconId: summonerData.profileIconId,
-            summonerLevel: summonerData.summonerLevel
+            summonerLevel: summonerData.summonerLevel,
           },
           region: routingRegion,
           platformId: platformId,
           lastMatchTime,
           loading: false,
-          error: null
+          error: null,
         });
 
         console.log('Player data successfully set');
@@ -194,7 +234,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           platformId: null,
           lastMatchTime: null,
           loading: false,
-          error: error instanceof Error ? error.message : 'Failed to load player information'
+          error: error instanceof Error ? error.message : 'Failed to load player information',
         });
       }
     }
