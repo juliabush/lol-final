@@ -62,5 +62,9 @@
   "errors": {
     "minLength": "ユーザー名は3文字以上である必要があります",
     "invalidCharacters": "文字と数字のみ許可されています"
+  },
+  "faq": {
+    "title": "LolNames.gg よくある質問",
+    "content": "<h2>リストはどのくらいの頻度で更新されますか？</h2><p>リストは約1時間ごとに更新されます。毎週完全なスキャンが実行されます。</p><h2>新しいアカウントで名前を取得できないのはなぜですか？</h2><p>名前がすでにアカウントによって使用されている場合、名前変更を通じてのみ取得できます。これらの名前は緑の背景で表示されます。名前が現在のユーザーによって使用されていない場合、完全に新しいアカウントで取得できます。これらの名前は青の背景で表示されます。</p><h2>アカウントが禁止されている場合はどうなりますか？</h2><p>アカウントが禁止されている場合、空きとして表示される場合がありますが、Riotが禁止されたアカウントに関するポリシーを変更しない限り、無期限に利用できません。 <a href=\"https://support.riotgames.com/hc/en-us/articles/202647784-Account-Deletion-FAQ#h2q2\" target=\"_blank\" rel=\"noopener\">Riotの立場。</a></p><h2>2文字の名前をどのように取得できますか？</h2><p>League of Legendsの名前の最小文字数は3です。文字間にスペースを入れることで解決できます。</p><h2>どのタイムゾーンが使用されますか？</h2><p>すべてのタイムゾーンはUTCです。現地時間に調整するには、この <a href=\"https://www.timeanddate.com/worldclock/converter.html?p1=1440\" target=\"_blank\" rel=\"noopener\">タイムゾーンコンバーター</a> を使用してください。</p><h2>名前は正確にいつ利用可能になりますか？</h2><p>通常、名前はUTCの真夜中にクリーンアップされます。ただし、一部のケースでは48時間かかったことがあります。リストされた日に数時間ごとに確認してください。</p><h2>私のためにリストから名前を削除してもらえますか？</h2><p>いいえ。すべての名前は自動的にスキャンされます。</p><h2>なぜXayahとRakan以前のチャンピオンの名前は許可されていないのですか？</h2><p><a href=\"https://boards.oce.leagueoflegends.com/en/c/miscellaneous/miF2IpMd-so-a-few-days-back-i-made-a-post-asking-about-why-the-xayah-and-rakan-names-were-open-and-riot-said\" target=\"_blank\" rel=\"noopener\">Riotは新しいチャンピオンの名前を予約しなくなると言いました。</a> しかし、彼らは古い名前のアカウントを禁止したため、決して期限切れになりません。</p>"
   }
 }
