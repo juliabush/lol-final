@@ -23,10 +23,11 @@ export function NameGenerator({
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Load saved values on component mount
+  // Load values on component mount - prioritize URL params over localStorage
   useEffect(() => {
-    const savedUsername = localStorage.getItem('riotUsername') || defaultUsername
-    setUsername(savedUsername)
+    // Use URL parameters if available, otherwise fall back to localStorage, then defaults
+    const finalUsername = defaultUsername || localStorage.getItem('riotUsername') || ''
+    setUsername(finalUsername)
   }, [defaultUsername])
 
   // Save values when they change

@@ -24,13 +24,14 @@ export function NameChecker({
   const [isLoading, setIsLoading] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
 
-  // Load saved values on component mount
+  // Load values on component mount - prioritize URL params over localStorage
   useEffect(() => {
-    const savedUsername = localStorage.getItem('riotUsername') || defaultUsername
-    const savedTagline = localStorage.getItem('riotTagline') || defaultTagline
+    // Use URL parameters if available, otherwise fall back to localStorage, then defaults
+    const finalUsername = defaultUsername || localStorage.getItem('riotUsername') || ''
+    const finalTagline = defaultTagline || localStorage.getItem('riotTagline') || ''
     
-    setUsername(savedUsername)
-    setTagline(savedTagline)
+    setUsername(finalUsername)
+    setTagline(finalTagline)
   }, [defaultUsername, defaultTagline])
 
   // Save values when they change
