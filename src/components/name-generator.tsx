@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
@@ -12,6 +13,12 @@ export function NameGenerator({
   defaultUsername?: string
 }) {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
+  const tCommon = useTranslations('common')
+  const tChecker = useTranslations('checker')
+  const tGenerator = useTranslations('generator')
+  const tErrors = useTranslations('errors')
   const [username, setUsername] = useState(defaultUsername)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -37,16 +44,16 @@ export function NameGenerator({
     try {
       // Validate the username
       if (username.length < 3) {
-        throw new Error('Username must be at least 3 characters')
+        throw new Error(tErrors('minLength'))
       }
       
       // Redirect to the generator results page
-      router.push(`/en/generator/${encodeURIComponent(username)}`)
+      router.push(`/${locale}/generator/${encodeURIComponent(username)}`)
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message)
       } else {
-        setError('An unexpected error occurred')
+        setError(tCommon('error'))
       }
     } finally {
       setIsLoading(false)
@@ -58,20 +65,20 @@ export function NameGenerator({
       <div className="flex gap-4 mb-6">
         <div className="flex-1">
           <label htmlFor="username" className="block text-sm font-medium mb-1">
-            In-game name
+            {tChecker('inGameName')}
           </label>
           <Input
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
+            placeholder={tChecker('enterUsername')}
             required
           />
         </div>
 
         <div className="flex items-end">
           <Button type="submit" disabled={isLoading}>
-            {isLoading ? <Loader2 className="animate-spin" /> : 'Find available taglines'}
+            {isLoading ? <Loader2 className="animate-spin" /> : tGenerator('findAvailableTaglines')}
           </Button>
         </div>
       </div>
