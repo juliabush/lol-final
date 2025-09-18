@@ -38,6 +38,11 @@ const nextConfig = {
         destination: '/:locale/generator/:name',
         permanent: true, // 301 redirect
       },
+      {
+        source: '/:locale/generator/:param/Name%20Change/:name',
+        destination: '/:locale/generator/:name',
+        permanent: true, // 301 redirect
+      },
       // Add more redirects as needed
     ]
   },
