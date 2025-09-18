@@ -275,7 +275,9 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
   }
 
   const { summonerInfo, region, platformId, lastMatchTime } = playerData
-  const iconUrl = `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${summonerInfo.profileIconId}.png`
+  const iconUrl = summonerInfo.profileIconId && version 
+    ? `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${summonerInfo.profileIconId}.png`
+    : '/profile.jpg'
   
   // Display the human-readable region based on the platform ID
   const regionDisplay = platformId ? (platformToDisplayName[platformId] || platformId) : 'Unknown'
