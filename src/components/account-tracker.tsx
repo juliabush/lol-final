@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
+import { getAccountByRiotId } from '@/lib/riot-api';
 
 export function AccountTracker({ 
   defaultUsername = '', 
@@ -61,25 +62,20 @@ export function AccountTracker({
     setError(null)
 
     try {
-      const response = await fetch(
-        `/api/account/${encodeURIComponent(username)}/${tagline}`
-      )
-      
-      if (!response.ok) {
-        throw new Error('Account not found')
+      const data = await getAccountByRiotId(username, tagline);
+      if (!data) {
+        throw new Error('Account not found');
       }
-
-      const data = await response.json()
       if (data.puuid) {
-        router.push(`/${locale}/tracker/${data.puuid}`)
+        router.push(`/${locale}/tracker/${data.puuid}`);
       }
     } catch (error) {
-      setError(t('playerNotFound', { 
-        gameName: username, 
-        tagLine: tagline 
-      }))
+      setError(t('playerNotFound', {
+        gameName: username,
+        tagLine: tagline
+      }));
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }
 

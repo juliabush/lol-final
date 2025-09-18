@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { formatDistanceToNow } from 'date-fns'
 import { Loader2 } from 'lucide-react'
 import Link from 'next/link'
+import { getMatches, getSummoner, getMatch } from '@/lib/riot-api';
 
 interface PlayerInfoProps {
   puuid: string
@@ -115,91 +116,61 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
     // Fetch player region and match history
     async function fetchPlayerData() {
       try {
-        console.log('Starting to fetch player data for puuid:', puuid)
-        
-        // Step 1: Try to find the player's region by checking match history in all regions
-        const regions = ['americas', 'asia', 'europe', 'sea']
-        let routingRegion = null
-        let matchId = null
-        
-        console.log('Trying to find player region from match history...')
+        console.log('Starting to fetch player data for puuid:', puuid);
+        const regions = ['americas', 'asia', 'europe', 'sea'];
+        let routingRegion = null;
+        let matchId = null;
+
+        console.log('Trying to find player region from match history...');
         for (const region of regions) {
           try {
-            console.log(`Checking matches in region: ${region}`)
-            const matchResponse = await fetch(`/api/matches/${region}/${puuid}`)
-            console.log(`Response from ${region}:`, matchResponse.status)
-            
-            if (matchResponse.ok) {
-              const matchIds = await matchResponse.json()
-              console.log(`Match IDs from ${region}:`, matchIds)
-              
-              if (matchIds.length > 0) {
-                routingRegion = region
-                matchId = matchIds[0] // Get the most recent match
-                console.log(`Found matches in ${region}, using matchId:`, matchId)
-                break
-              } else {
-                console.log(`No matches found in ${region}`)
-              }
+            console.log(`Checking matches in region: ${region}`);
+            const matchIds = await getMatches(region, puuid);
+            console.log(`Match IDs from ${region}:`, matchIds);
+
+            if (matchIds.length > 0) {
+              routingRegion = region;
+              matchId = matchIds[0]; // Get the most recent match
+              console.log(`Found matches in ${region}, using matchId:`, matchId);
+              break;
             } else {
-              console.log(`Failed to fetch matches from ${region}:`, matchResponse.status)
+              console.log(`No matches found in ${region}`);
             }
           } catch (error) {
-            console.error(`Error fetching matches from ${region}:`, error)
+            console.error(`Error fetching matches from ${region}:`, error);
           }
         }
-        
+
         if (!routingRegion || !matchId) {
-          console.error('Could not find recent matches for this player in any region')
-          throw new Error('Could not find recent matches for this player')
+          console.error('Could not find recent matches for this player in any region');
+          throw new Error('Could not find recent matches for this player');
         }
-        
-        console.log(`Player routing region determined: ${routingRegion}, matchId: ${matchId}`)
-        
-        // Extract platform ID from match ID (e.g., NA1_123456 -> NA1)
-        const platformId = matchId.split('_')[0]
-        console.log(`Extracted platform ID: ${platformId}`)
-        
+
+        console.log(`Player routing region determined: ${routingRegion}, matchId: ${matchId}`);
+        const platformId = matchId.split('_')[0];
+        console.log(`Extracted platform ID: ${platformId}`);
+
         if (!platformId || !platformToRegion[platformId]) {
-          console.error(`Invalid platform ID: ${platformId}`)
-          throw new Error(`Invalid platform ID: ${platformId}`)
+          console.error(`Invalid platform ID: ${platformId}`);
+          throw new Error(`Invalid platform ID: ${platformId}`);
         }
-        
-        // Get the specific region for summoner API
-        const summonerRegion = platformToRegion[platformId]
-        console.log(`Mapped to summoner region: ${summonerRegion}`)
-        
-        // Step 2: Fetch match details and summoner info in parallel
-        console.log(`Fetching match details and summoner info in parallel`)
-        
-        const [matchDetailsResponse, summonerResponse] = await Promise.all([
-          fetch(`/api/match/${routingRegion}/${matchId}`),
-          fetch(`/api/summoner/${summonerRegion}/${puuid}`)
+
+        const summonerRegion = platformToRegion[platformId];
+        console.log(`Mapped to summoner region: ${summonerRegion}`);
+
+        console.log(`Fetching match details and summoner info in parallel`);
+
+        const [matchDetails, summonerData] = await Promise.all([
+          getMatch(routingRegion, matchId),
+          getSummoner(summonerRegion, puuid)
         ]);
-        
-        console.log('Match details response:', matchDetailsResponse.status)
-        console.log('Summoner info response:', summonerResponse.status)
-        
-        // Process match details
-        let lastMatchTime = null
-        if (matchDetailsResponse.ok) {
-          const matchDetails = await matchDetailsResponse.json()
-          console.log('Match details received')
-          lastMatchTime = matchDetails.info.gameEndTimestamp
-          console.log('Last match time:', new Date(lastMatchTime).toISOString())
-        } else {
-          console.error('Failed to fetch match details:', matchDetailsResponse.status)
-        }
-        
-        // Process summoner info
-        if (!summonerResponse.ok) {
-          console.error('Failed to fetch summoner info:', summonerResponse.status)
-          throw new Error('Failed to fetch summoner info')
-        }
-        
-        const summonerData = await summonerResponse.json()
-        console.log('Summoner data received')
-        
+
+        console.log('Match details received');
+        const lastMatchTime = matchDetails.info.gameEndTimestamp;
+        console.log('Last match time:', new Date(lastMatchTime).toISOString());
+
+        console.log('Summoner data received');
+
         setPlayerData({
           summonerInfo: {
             id: summonerData.id,
@@ -212,11 +183,11 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           lastMatchTime,
           loading: false,
           error: null
-        })
-        
-        console.log('Player data successfully set')
+        });
+
+        console.log('Player data successfully set');
       } catch (error) {
-        console.error('Error in fetchPlayerData:', error)
+        console.error('Error in fetchPlayerData:', error);
         setPlayerData({
           summonerInfo: null,
           region: null,
@@ -224,7 +195,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           lastMatchTime: null,
           loading: false,
           error: error instanceof Error ? error.message : 'Failed to load player information'
-        })
+        });
       }
     }
 
