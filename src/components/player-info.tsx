@@ -78,7 +78,7 @@ const platformToDisplayName: Record<string, string> = {
   'ME1': 'ME'
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Use your actual base URL
+// Use relative URLs for API calls
 
 export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
   const t = useTranslations('tracker')
@@ -126,7 +126,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
         for (const region of regions) {
           try {
             console.log(`Checking matches in region: ${region}`);
-            const response = await fetch(`${baseUrl}/api/riot`, {
+            const response = await fetch('/api/riot', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
         console.log(`Fetching match details and summoner info in parallel`);
 
         const [matchDetailsResponse, summonerResponse] = await Promise.all([
-          fetch(`${baseUrl}/api/riot`, {
+          fetch('/api/riot', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -189,7 +189,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
               matchId,
             }),
           }),
-          fetch(`${baseUrl}/api/riot`, {
+          fetch('/api/riot', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
