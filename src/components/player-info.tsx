@@ -236,7 +236,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           platformId: null,
           lastMatchTime: null,
           loading: false,
-          error: error instanceof Error ? error.message : 'Failed to load player information',
+          error: error instanceof Error ? error.message : t('connectionError'),
         });
       }
     }
@@ -303,7 +303,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
         <div className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-blue-500">
           <Image 
             src={iconUrl}
-            alt="Summoner Icon"
+            alt={t('playerFound', { gameName: gameName || summonerInfo.name, tagLine: tagLine })}
             fill
             className="object-cover"
           />
