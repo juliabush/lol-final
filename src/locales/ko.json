@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "확인",
+    "track": "추적",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "submit": "제출",
+    "cancel": "취소"
+  },
+  "nav": {
+    "nameChecker": "이름 확인기",
+    "generator": "생성기",
+    "tracker": "추적기",
+    "leaderboard": "리더보드",
+    "matchLookup": "매치 검색",
+    "faq": "자주 묻는 질문"
+  },
+  "checker": {
+    "title": "LoL 및 Riot 이름 확인기",
+    "inGameName": "게임 내 이름",
+    "tagline": "태그라인",
+    "enterUsername": "사용자 이름 입력",
+    "tagPlaceholder": "태그",
+    "onlyLettersNumbers": "문자와 숫자만 허용됩니다",
+    "accountNotFound": "플레이어 {username}#{tagline}을(를) 찾을 수 없습니다",
+    "connectionError": "Riot 서버에 연결할 수 없습니다.",
+    "tryAgain": "나중에 다시 시도하거나 문제가 지속되면 지원팀에 문의하세요.",
+    "isAvailable": "{username}#{tagline}이(가) 사용 가능합니다!",
+    "isExisting": "{username}#{tagline}은(는) 기존 계정입니다.",
+    "availableDescription": "이 게임 내 이름과 태그라인 조합이 사용 가능합니다! 기존 계정에 사용하거나 새 계정을 만들 수 있습니다.",
+    "takenDescription": "이 게임 내 이름과 태그라인 조합은 다른 플레이어가 사용 중입니다:",
+    "trackAccount": "계정 추적",
+    "checkGenerateTrack": "LoL 이름 확인, 생성 및 추적",
+    "toolDescription": "저희 도구는 League of Legends(LoL) 이름을 빠르고 쉽게 확인, 생성 및 추적할 수 있도록 설계되었습니다. 완벽한 게임 내 이름을 찾고 있든, 이름의 사용 가능 여부를 확인하고 있든, 특정 계정을 주시하고 있든, 필요한 모든 것을 한 곳에서 찾을 수 있습니다.",
+    "howItWorks": "LoL 이름이 작동하는 방식",
+    "howItWorksDescription": "Riot이 범용 Riot ID 시스템을 도입한 이후, 모든 플레이어는 이제 게임 내 이름(Riot ID)과 태그라인을 갖게 되었습니다. Riot ID는 모든 사람이 보는 것이고, 태그라인(#NA1 또는 #1234와 같은 짧은 코드)은 같은 표시 이름을 가질 수 있는 다른 플레이어와 구별하는 데 도움이 됩니다.",
+    "nameGeneratorDescription": "꿈의 게임 내 이름을 위한 무료 태그라인을 찾고 계신가요? 생성기를 사용해보세요.",
+    "accountTrackerDescription": "이름 변경을 통해 특정 계정을 따라가고 싶으신가요? 계정 추적기를 사용하세요",
+    "nameGenerator": "이름 생성기",
+    "accountTracker": "계정 추적기"
+  },
+  "generator": {
+    "title": "이름 생성기",
+    "description": "꿈의 게임 내 이름을 위한 무료 태그라인을 찾고 계신가요? 생성기를 사용해보세요.",
+    "findAvailableTaglines": "사용 가능한 태그라인 찾기",
+    "availableTaglines": "{username}에 대한 사용 가능한 태그라인"
+  },
+  "tracker": {
+    "title": "계정 추적기",
+    "description": "이름 변경을 통해 특정 계정을 따라가고 싶으신가요? 계정 추적기를 사용하세요",
+    "loadingPlayer": "플레이어 정보 로딩 중...",
+    "noLolData": "LoL 데이터를 찾을 수 없습니다.",
+    "lastMatch": "마지막 매치: {time}",
+    "level": "레벨 {level}",
+    "connectionError": "Riot 서버에 연결할 수 없습니다.",
+    "tryAgain": "나중에 다시 시도하거나 문제가 지속되면 지원팀에 문의하세요.",
+    "playerFound": "플레이어 {gameName}#{tagLine}을(를) 찾았습니다!",
+    "playerNotFound": "플레이어 {gameName}#{tagLine}을(를) 찾을 수 없습니다.",
+    "savePuuid": "이 사용자를 추적하려면 영구 사용자 ID(PUUID)를 저장하세요:",
+    "bookmarkPage": "또는 이 페이지를 북마크하여 언제든지 이 계정을 확인하세요!"
+  },
+  "errors": {
+    "minLength": "사용자 이름은 최소 3자 이상이어야 합니다",
+    "invalidCharacters": "문자와 숫자만 허용됩니다"
+  }
+}

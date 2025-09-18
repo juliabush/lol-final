@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "Kontrol Et",
+    "track": "Takip Et",
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "submit": "Gönder",
+    "cancel": "İptal"
+  },
+  "nav": {
+    "nameChecker": "İsim Kontrolcüsü",
+    "generator": "Üretici",
+    "tracker": "Takipçi",
+    "leaderboard": "Liderlik Tablosu",
+    "matchLookup": "Maç Arama",
+    "faq": "Sık Sorulan Sorular"
+  },
+  "checker": {
+    "title": "LoL ve Riot İsim Kontrolcüsü",
+    "inGameName": "Oyundaki isim",
+    "tagline": "Tagline",
+    "enterUsername": "Kullanıcı adını girin",
+    "tagPlaceholder": "TAG",
+    "onlyLettersNumbers": "Sadece harfler ve rakamlar izin verilir",
+    "accountNotFound": "Oyuncu {username}#{tagline} bulunamadı",
+    "connectionError": "Riot sunucularına bağlanamadık.",
+    "tryAgain": "Lütfen daha sonra tekrar deneyin veya sorun devam ederse destek ile iletişime geçin.",
+    "isAvailable": "{username}#{tagline} müsait!",
+    "isExisting": "{username}#{tagline} mevcut bir hesap.",
+    "availableDescription": "Bu oyundaki isim ve tagline kombinasyonu müsait! Mevcut bir hesap için kullanabilir veya yeni bir tane oluşturabilirsiniz.",
+    "takenDescription": "Bu oyundaki isim ve tagline kombinasyonu başka bir oyuncu tarafından alınmış:",
+    "trackAccount": "Hesabı takip et",
+    "checkGenerateTrack": "LoL İsimlerini Kontrol Et, Üret ve Takip Et",
+    "toolDescription": "Aracımız, League of Legends (LoL) isimlerini hızlı ve kolay bir şekilde kontrol etmenize, üretmenize ve takip etmenize yardımcı olmak için tasarlanmıştır. Mükemmel oyundaki ismi arıyor olun, bir ismin müsait olup olmadığını kontrol ediyor olun veya belirli bir hesabı takip ediyor olun, ihtiyacınız olan her şeyi tek bir yerde bulabilirsiniz.",
+    "howItWorks": "LoL İsimleri Nasıl Çalışır",
+    "howItWorksDescription": "Riot evrensel Riot ID sistemini tanıttığından beri, her oyuncunun artık bir oyundaki ismi (Riot ID'niz) ve bir tagline'ı var. Riot ID'niz herkesin gördüğü şeydir, tagline'ınız ise (#NA1 veya #1234 gibi kısa bir kod) aynı görünen isme sahip olabilecek diğer oyunculardan sizi ayırt etmenize yardımcı olur.",
+    "nameGeneratorDescription": "Hayalinizdeki oyundaki isim için ücretsiz bir tagline mi arıyorsunuz? Üreticiyi deneyin.",
+    "accountTrackerDescription": "Belirli bir hesabı isim değişiklikleri boyunca takip etmek mi istiyorsunuz? Hesap Takipçisini kullanın",
+    "nameGenerator": "İsim Üreticisi",
+    "accountTracker": "Hesap Takipçisi"
+  },
+  "generator": {
+    "title": "İsim Üreticisi",
+    "description": "Hayalinizdeki oyundaki isim için ücretsiz bir tagline mi arıyorsunuz? Üreticiyi deneyin.",
+    "findAvailableTaglines": "Müsait tagline'ları bul",
+    "availableTaglines": "{username} için müsait tagline'lar"
+  },
+  "tracker": {
+    "title": "Hesap Takipçisi",
+    "description": "Belirli bir hesabı isim değişiklikleri boyunca takip etmek mi istiyorsunuz? Hesap Takipçisini kullanın",
+    "loadingPlayer": "Oyuncu bilgileri yükleniyor...",
+    "noLolData": "LoL verisi bulunamadı.",
+    "lastMatch": "Son maç: {time}",
+    "level": "Seviye {level}",
+    "connectionError": "Riot sunucularına bağlanamadık.",
+    "tryAgain": "Lütfen daha sonra tekrar deneyin veya sorun devam ederse destek ile iletişime geçin.",
+    "playerFound": "Oyuncu {gameName}#{tagLine} bulundu!",
+    "playerNotFound": "Oyuncu {gameName}#{tagLine} bulunamadı.",
+    "savePuuid": "Bu kullanıcıyı takip etmek için, kalıcı kullanıcı kimliğini (PUUID) kaydedin:",
+    "bookmarkPage": "Veya bu hesabı istediğiniz zaman kontrol etmek için bu sayfayı yer imlerine ekleyin!"
+  },
+  "errors": {
+    "minLength": "Kullanıcı adı en az 3 karakter olmalıdır",
+    "invalidCharacters": "Sadece harfler ve rakamlar izin verilir"
+  }
+}

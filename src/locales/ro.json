@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "Verifică",
+    "track": "Urmărește",
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "submit": "Trimite",
+    "cancel": "Anulează"
+  },
+  "nav": {
+    "nameChecker": "Verificator Nume",
+    "generator": "Generator",
+    "tracker": "Urmăritor",
+    "leaderboard": "Clasament",
+    "matchLookup": "Căutare Meciuri",
+    "faq": "Întrebări Frecvente"
+  },
+  "checker": {
+    "title": "Verificator Nume LoL și Riot",
+    "inGameName": "Nume în joc",
+    "tagline": "Tagline",
+    "enterUsername": "Introdu numele de utilizator",
+    "tagPlaceholder": "TAG",
+    "onlyLettersNumbers": "Sunt permise doar litere și cifre",
+    "accountNotFound": "Jucătorul {username}#{tagline} nu a fost găsit",
+    "connectionError": "Nu am putut să ne conectăm la serverele Riot.",
+    "tryAgain": "Te rugăm să încerci din nou mai târziu sau să contactezi suportul dacă problema persistă.",
+    "isAvailable": "{username}#{tagline} este disponibil!",
+    "isExisting": "{username}#{tagline} este un cont existent.",
+    "availableDescription": "Această combinație de nume în joc și tagline este disponibilă! O poți folosi pentru un cont existent sau pentru a crea unul nou.",
+    "takenDescription": "Această combinație de nume în joc și tagline este folosită de alt jucător:",
+    "trackAccount": "Urmărește contul",
+    "checkGenerateTrack": "Verifică, Generează și Urmărește Nume LoL",
+    "toolDescription": "Instrumentul nostru este proiectat să te ajute să verifici, să generezi și să urmărești numele din League of Legends (LoL) rapid și ușor. Fie că cauți numele perfect în joc, verifici dacă un nume este disponibil, sau urmărești un cont specific, avem tot ce ai nevoie într-un singur loc.",
+    "howItWorks": "Cum Funcționează Numele LoL",
+    "howItWorksDescription": "De când Riot a introdus sistemul universal Riot ID, fiecare jucător are acum un nume în joc (Riot ID-ul tău) și o tagline. Riot ID-ul tău este ceea ce toată lumea vede, în timp ce tagline-ul tău (un cod scurt ca #NA1 sau #1234) te ajută să te diferențiezi de alți jucători care ar putea avea același nume de afișare.",
+    "nameGeneratorDescription": "Cauți o tagline gratuită pentru numele tău de vis în joc? Încearcă Generatorul.",
+    "accountTrackerDescription": "Vrei să urmărești un cont specific prin schimbările de nume? Folosește Urmăritorul de Conturi",
+    "nameGenerator": "Generator Nume",
+    "accountTracker": "Urmăritor Conturi"
+  },
+  "generator": {
+    "title": "Generator Nume",
+    "description": "Cauți o tagline gratuită pentru numele tău de vis în joc? Încearcă Generatorul.",
+    "findAvailableTaglines": "Găsește tagline-uri disponibile",
+    "availableTaglines": "Tagline-uri disponibile pentru {username}"
+  },
+  "tracker": {
+    "title": "Urmăritor Conturi",
+    "description": "Vrei să urmărești un cont specific prin schimbările de nume? Folosește Urmăritorul de Conturi",
+    "loadingPlayer": "Se încarcă informațiile jucătorului...",
+    "noLolData": "Nu au fost găsite date LoL.",
+    "lastMatch": "Ultimul meci: {time}",
+    "level": "Nivelul {level}",
+    "connectionError": "Nu am putut să ne conectăm la serverele Riot.",
+    "tryAgain": "Te rugăm să încerci din nou mai târziu sau să contactezi suportul dacă problema persistă.",
+    "playerFound": "Jucătorul {gameName}#{tagLine} a fost găsit!",
+    "playerNotFound": "Jucătorul {gameName}#{tagLine} nu a fost găsit.",
+    "savePuuid": "Pentru a urmări acest utilizator, salvează ID-ul său permanent de utilizator (PUUID):",
+    "bookmarkPage": "Sau pur și simplu marchează această pagină pentru a verifica acest cont oricând!"
+  },
+  "errors": {
+    "minLength": "Numele de utilizator trebuie să aibă cel puțin 3 caractere",
+    "invalidCharacters": "Sunt permise doar litere și cifre"
+  }
+}

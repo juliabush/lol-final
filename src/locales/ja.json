@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "確認",
+    "track": "追跡",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "submit": "送信",
+    "cancel": "キャンセル"
+  },
+  "nav": {
+    "nameChecker": "名前チェッカー",
+    "generator": "ジェネレーター",
+    "tracker": "トラッカー",
+    "leaderboard": "リーダーボード",
+    "matchLookup": "マッチ検索",
+    "faq": "よくある質問"
+  },
+  "checker": {
+    "title": "LoLとRiot名前チェッカー",
+    "inGameName": "ゲーム内名前",
+    "tagline": "タグライン",
+    "enterUsername": "ユーザー名を入力",
+    "tagPlaceholder": "タグ",
+    "onlyLettersNumbers": "文字と数字のみ許可されています",
+    "accountNotFound": "プレイヤー {username}#{tagline} が見つかりません",
+    "connectionError": "Riotサーバーに接続できませんでした。",
+    "tryAgain": "後でもう一度お試しください。問題が続く場合はサポートにお問い合わせください。",
+    "isAvailable": "{username}#{tagline} は利用可能です！",
+    "isExisting": "{username}#{tagline} は既存のアカウントです。",
+    "availableDescription": "このゲーム内名前とタグラインの組み合わせは利用可能です！既存のアカウントに使用するか、新しいアカウントを作成できます。",
+    "takenDescription": "このゲーム内名前とタグラインの組み合わせは他のプレイヤーによって使用されています：",
+    "trackAccount": "アカウントを追跡",
+    "checkGenerateTrack": "LoL名前の確認、生成、追跡",
+    "toolDescription": "私たちのツールは、League of Legends（LoL）の名前を素早く簡単に確認、生成、追跡できるように設計されています。完璧なゲーム内名前を探している、名前の利用可能性を確認している、特定のアカウントを監視しているなど、必要なすべてを一箇所で見つけることができます。",
+    "howItWorks": "LoL名前の仕組み",
+    "howItWorksDescription": "RiotがユニバーサルRiot IDシステムを導入して以来、すべてのプレイヤーはゲーム内名前（Riot ID）とタグラインを持つようになりました。Riot IDは誰もが目にするもので、タグライン（#NA1や#1234のような短いコード）は同じ表示名を持つ可能性のある他のプレイヤーと区別するのに役立ちます。",
+    "nameGeneratorDescription": "理想のゲーム内名前のための無料タグラインをお探しですか？ジェネレーターをお試しください。",
+    "accountTrackerDescription": "名前変更を通じて特定のアカウントをフォローしたいですか？アカウントトラッカーを使用してください",
+    "nameGenerator": "名前ジェネレーター",
+    "accountTracker": "アカウントトラッカー"
+  },
+  "generator": {
+    "title": "名前ジェネレーター",
+    "description": "理想のゲーム内名前のための無料タグラインをお探しですか？ジェネレーターをお試しください。",
+    "findAvailableTaglines": "利用可能なタグラインを検索",
+    "availableTaglines": "{username} の利用可能なタグライン"
+  },
+  "tracker": {
+    "title": "アカウントトラッカー",
+    "description": "名前変更を通じて特定のアカウントをフォローしたいですか？アカウントトラッカーを使用してください",
+    "loadingPlayer": "プレイヤー情報を読み込み中...",
+    "noLolData": "LoLデータが見つかりません。",
+    "lastMatch": "最後のマッチ: {time}",
+    "level": "レベル {level}",
+    "connectionError": "Riotサーバーに接続できませんでした。",
+    "tryAgain": "後でもう一度お試しください。問題が続く場合はサポートにお問い合わせください。",
+    "playerFound": "プレイヤー {gameName}#{tagLine} が見つかりました！",
+    "playerNotFound": "プレイヤー {gameName}#{tagLine} が見つかりません。",
+    "savePuuid": "このユーザーを追跡するには、永続的なユーザーID（PUUID）を保存してください：",
+    "bookmarkPage": "または、このページをブックマークして、いつでもこのアカウントを確認してください！"
+  },
+  "errors": {
+    "minLength": "ユーザー名は3文字以上である必要があります",
+    "invalidCharacters": "文字と数字のみ許可されています"
+  }
+}

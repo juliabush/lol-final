@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "Ellenőrzés",
+    "track": "Követés",
+    "loading": "Betöltés...",
+    "error": "Hiba",
+    "submit": "Küldés",
+    "cancel": "Mégse"
+  },
+  "nav": {
+    "nameChecker": "Név Ellenőrző",
+    "generator": "Generátor",
+    "tracker": "Követő",
+    "leaderboard": "Ranglista",
+    "matchLookup": "Mérkőzés Keresés",
+    "faq": "GYIK"
+  },
+  "checker": {
+    "title": "LoL és Riot Név Ellenőrző",
+    "inGameName": "Játékbeli név",
+    "tagline": "Tagline",
+    "enterUsername": "Adja meg a felhasználónevet",
+    "tagPlaceholder": "TAG",
+    "onlyLettersNumbers": "Csak betűk és számok engedélyezettek",
+    "accountNotFound": "A {username}#{tagline} játékos nem található",
+    "connectionError": "Nem tudtunk kapcsolódni a Riot szerverekhez.",
+    "tryAgain": "Kérjük, próbálja újra később vagy vegye fel a kapcsolatot az ügyfélszolgálattal, ha a probléma továbbra is fennáll.",
+    "isAvailable": "{username}#{tagline} elérhető!",
+    "isExisting": "{username}#{tagline} egy létező fiók.",
+    "availableDescription": "Ez a játékbeli név és tagline kombináció elérhető! Használhatja egy meglévő fiókhoz vagy új létrehozásához.",
+    "takenDescription": "Ezt a játékbeli név és tagline kombinációt egy másik játékos használja:",
+    "trackAccount": "Fiók követése",
+    "checkGenerateTrack": "LoL Nevek Ellenőrzése, Generálása és Követése",
+    "toolDescription": "Eszközünk arra készült, hogy segítsen gyorsan és könnyedén ellenőrizni, generálni és követni a League of Legends (LoL) neveket. Akár a tökéletes játékbeli nevet keresi, akár ellenőrzi egy név elérhetőségét, vagy egy adott fiókot szeretne figyelni, mindent egy helyen talál.",
+    "howItWorks": "Hogyan Működnek a LoL Nevek",
+    "howItWorksDescription": "Amióta a Riot bevezette az univerzális Riot ID rendszert, minden játékosnak van egy játékbeli neve (Riot ID) és egy tagline-je. A Riot ID az, amit mindenki lát, míg a tagline (egy rövid kód, mint #NA1 vagy #1234) segít megkülönböztetni Önt más játékosoktól, akiknek ugyanaz a megjelenített nevük lehet.",
+    "nameGeneratorDescription": "Szabad tagline-t keres álmai játékbeli nevéhez? Próbálja ki a Generátort.",
+    "accountTrackerDescription": "Szeretne egy adott fiókot követni névváltásokon keresztül? Használja a Fiók Követőt",
+    "nameGenerator": "Név Generátor",
+    "accountTracker": "Fiók Követő"
+  },
+  "generator": {
+    "title": "Név Generátor",
+    "description": "Szabad tagline-t keres álmai játékbeli nevéhez? Próbálja ki a Generátort.",
+    "findAvailableTaglines": "Elérhető tagline-ok keresése",
+    "availableTaglines": "Elérhető tagline-ok a {username} számára"
+  },
+  "tracker": {
+    "title": "Fiók Követő",
+    "description": "Szeretne egy adott fiókot követni névváltásokon keresztül? Használja a Fiók Követőt",
+    "loadingPlayer": "Játékos információk betöltése...",
+    "noLolData": "Nem található LoL adat.",
+    "lastMatch": "Utolsó mérkőzés: {time}",
+    "level": "Szint {level}",
+    "connectionError": "Nem tudtunk kapcsolódni a Riot szerverekhez.",
+    "tryAgain": "Kérjük, próbálja újra később vagy vegye fel a kapcsolatot az ügyfélszolgálattal, ha a probléma továbbra is fennáll.",
+    "playerFound": "A {gameName}#{tagLine} játékos megtalálva!",
+    "playerNotFound": "A {gameName}#{tagLine} játékos nem található.",
+    "savePuuid": "A felhasználó követéséhez mentse el az állandó felhasználói azonosítóját (PUUID):",
+    "bookmarkPage": "Vagy egyszerűen könyvjelzőzze meg ezt az oldalt, hogy bármikor ellenőrizhesse ezt a fiókot!"
+  },
+  "errors": {
+    "minLength": "A felhasználónévnek legalább 3 karakterből kell állnia",
+    "invalidCharacters": "Csak betűk és számok engedélyezettek"
+  }
+}

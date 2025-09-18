@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "Sprawdź",
+    "track": "Śledź",
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "submit": "Wyślij",
+    "cancel": "Anuluj"
+  },
+  "nav": {
+    "nameChecker": "Sprawdzacz Nazw",
+    "generator": "Generator",
+    "tracker": "Śledzenie",
+    "leaderboard": "Ranking",
+    "matchLookup": "Wyszukiwanie Meczów",
+    "faq": "FAQ"
+  },
+  "checker": {
+    "title": "Sprawdzacz Nazw LoL i Riot",
+    "inGameName": "Nazwa w grze",
+    "tagline": "Tagline",
+    "enterUsername": "Wprowadź nazwę użytkownika",
+    "tagPlaceholder": "TAG",
+    "onlyLettersNumbers": "Dozwolone są tylko litery i cyfry",
+    "accountNotFound": "Gracz {username}#{tagline} nie znaleziony",
+    "connectionError": "Nie mogliśmy połączyć się z serwerami Riot.",
+    "tryAgain": "Spróbuj ponownie później lub skontaktuj się z pomocą techniczną, jeśli problem się utrzymuje.",
+    "isAvailable": "{username}#{tagline} jest dostępny!",
+    "isExisting": "{username}#{tagline} to istniejące konto.",
+    "availableDescription": "Ta kombinacja nazwy w grze i tagline jest dostępna! Możesz jej użyć do istniejącego konta lub utworzenia nowego.",
+    "takenDescription": "Ta kombinacja nazwy w grze i tagline jest zajęta przez innego gracza:",
+    "trackAccount": "Śledź konto",
+    "checkGenerateTrack": "Sprawdzaj, Generuj i Śledź Nazwy LoL",
+    "toolDescription": "Nasze narzędzie zostało zaprojektowane, aby pomóc Ci sprawdzać, generować i śledzić nazwy League of Legends (LoL) szybko i łatwo. Niezależnie od tego, czy szukasz idealnej nazwy w grze, sprawdzasz dostępność nazwy, czy obserwujesz konkretne konto, mamy wszystko, czego potrzebujesz w jednym miejscu.",
+    "howItWorks": "Jak Działają Nazwy LoL",
+    "howItWorksDescription": "Od kiedy Riot wprowadził uniwersalny system Riot ID, każdy gracz ma teraz nazwę w grze (Twoje Riot ID) i tagline. Twoje Riot ID to to, co wszyscy widzą, podczas gdy Twoja tagline (krótki kod jak #NA1 lub #1234) pomaga odróżnić Cię od innych graczy, którzy mogą mieć tę samą nazwę wyświetlaną.",
+    "nameGeneratorDescription": "Szukasz wolnej tagline dla swojej wymarzonej nazwy w grze? Wypróbuj Generator.",
+    "accountTrackerDescription": "Chcesz śledzić konkretne konto przez zmiany nazw? Użyj Śledzenia Konta",
+    "nameGenerator": "Generator Nazw",
+    "accountTracker": "Śledzenie Konta"
+  },
+  "generator": {
+    "title": "Generator Nazw",
+    "description": "Szukasz wolnej tagline dla swojej wymarzonej nazwy w grze? Wypróbuj Generator.",
+    "findAvailableTaglines": "Znajdź dostępne tagline",
+    "availableTaglines": "Dostępne tagline dla {username}"
+  },
+  "tracker": {
+    "title": "Śledzenie Konta",
+    "description": "Chcesz śledzić konkretne konto przez zmiany nazw? Użyj Śledzenia Konta",
+    "loadingPlayer": "Ładowanie informacji o graczu...",
+    "noLolData": "Nie znaleziono danych LoL.",
+    "lastMatch": "Ostatni mecz: {time}",
+    "level": "Poziom {level}",
+    "connectionError": "Nie mogliśmy połączyć się z serwerami Riot.",
+    "tryAgain": "Spróbuj ponownie później lub skontaktuj się z pomocą techniczną, jeśli problem się utrzymuje.",
+    "playerFound": "Gracz {gameName}#{tagLine} znaleziony!",
+    "playerNotFound": "Gracz {gameName}#{tagLine} nie znaleziony.",
+    "savePuuid": "Aby śledzić tego użytkownika, zapisz jego stały identyfikator użytkownika (PUUID):",
+    "bookmarkPage": "Lub po prostu dodaj tę stronę do zakładek, aby sprawdzać to konto w dowolnym momencie!"
+  },
+  "errors": {
+    "minLength": "Nazwa użytkownika musi mieć co najmniej 3 znaki",
+    "invalidCharacters": "Dozwolone są tylko litery i cyfry"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "common": {
+    "check": "Tjek",
+    "track": "Følg",
+    "loading": "Indlæser...",
+    "error": "Fejl",
+    "submit": "Send",
+    "cancel": "Annuller"
+  },
+  "nav": {
+    "nameChecker": "Navn Tjekker",
+    "generator": "Generator",
+    "tracker": "Tracker",
+    "leaderboard": "Rangliste",
+    "matchLookup": "Match Søgning",
+    "faq": "FAQ"
+  },
+  "checker": {
+    "title": "LoL og Riot Navn Tjekker",
+    "inGameName": "In-game navn",
+    "tagline": "Tagline",
+    "enterUsername": "Indtast brugernavn",
+    "tagPlaceholder": "TAG",
+    "onlyLettersNumbers": "Kun bogstaver og tal er tilladt",
+    "accountNotFound": "Spiller {username}#{tagline} ikke fundet",
+    "connectionError": "Vi kunne ikke forbinde til Riot servere.",
+    "tryAgain": "Prøv igen senere eller kontakt support hvis problemet fortsætter.",
+    "isAvailable": "{username}#{tagline} er tilgængelig!",
+    "isExisting": "{username}#{tagline} er en eksisterende konto.",
+    "availableDescription": "Denne in-game navn og tagline kombination er tilgængelig! Du kan bruge den til en eksisterende konto eller til at oprette en ny.",
+    "takenDescription": "Denne in-game navn og tagline kombination er taget af en anden spiller:",
+    "trackAccount": "Følg konto",
+    "checkGenerateTrack": "Tjek, Generer og Følg LoL Navne",
+    "toolDescription": "Vores værktøj er designet til at hjælpe dig med at tjekke, generere og følge League of Legends (LoL) navne hurtigt og nemt. Uanset om du leder efter det perfekte in-game navn, tjekker om et navn er tilgængeligt, eller holder øje med en specifik konto, har vi alt hvad du har brug for på ét sted.",
+    "howItWorks": "Sådan Fungerer LoL Navne",
+    "howItWorksDescription": "Siden Riot introducerede det universelle Riot ID system, har hver spiller nu et in-game navn (dit Riot ID) og en tagline. Dit Riot ID er det alle ser, mens din tagline (en kort kode som #NA1 eller #1234) hjælper med at skelne dig fra andre spillere der måtte have det samme visningsnavn.",
+    "nameGeneratorDescription": "Leder du efter en gratis tagline til dit drømme in-game navn? Prøv Generatoren.",
+    "accountTrackerDescription": "Vil du følge en specifik konto gennem navneændringer? Brug Konto Trackeren",
+    "nameGenerator": "Navn Generator",
+    "accountTracker": "Konto Tracker"
+  },
+  "generator": {
+    "title": "Navn Generator",
+    "description": "Leder du efter en gratis tagline til dit drømme in-game navn? Prøv Generatoren.",
+    "findAvailableTaglines": "Find tilgængelige taglines",
+    "availableTaglines": "Tilgængelige taglines for {username}"
+  },
+  "tracker": {
+    "title": "Konto Tracker",
+    "description": "Vil du følge en specifik konto gennem navneændringer? Brug Konto Trackeren",
+    "loadingPlayer": "Indlæser spiller information...",
+    "noLolData": "Ingen LoL data fundet.",
+    "lastMatch": "Sidste match: {time}",
+    "level": "Niveau {level}",
+    "connectionError": "Vi kunne ikke forbinde til Riot servere.",
+    "tryAgain": "Prøv igen senere eller kontakt support hvis problemet fortsætter.",
+    "playerFound": "Spiller {gameName}#{tagLine} fundet!",
+    "playerNotFound": "Spiller {gameName}#{tagLine} ikke fundet.",
+    "savePuuid": "For at følge denne bruger, gem deres permanente bruger ID (PUUID):",
+    "bookmarkPage": "Eller bare bogmærk denne side for at tjekke denne konto når som helst!"
+  },
+  "errors": {
+    "minLength": "Brugernavn skal være mindst 3 tegn",
+    "invalidCharacters": "Kun bogstaver og tal er tilladt"
+  }
+}
