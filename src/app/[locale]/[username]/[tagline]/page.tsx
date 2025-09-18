@@ -6,23 +6,10 @@ import { getTranslations } from 'next-intl/server'
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {
-    const response = await fetch('/api/riot', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        action: 'getAccountByRiotId',
-        username,
-        tagline,
-      }),
-    });
+    // Use the Riot API function directly instead of making a fetch call to our own API
+    const { getAccountByRiotId } = await import('@/lib/riot-api');
+    const account = await getAccountByRiotId(username, tagline);
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch account data');
-    }
-
-    const account = await response.json();
     return {
       isAvailable: !account,
       account,
