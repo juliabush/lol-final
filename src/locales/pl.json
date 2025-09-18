@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "Szukasz wolnej tagline dla swojej wymarzonej nazwy w grze? Wypróbuj Generator.",
     "accountTrackerDescription": "Chcesz śledzić konkretne konto przez zmiany nazw? Użyj Śledzenia Konta",
     "nameGenerator": "Generator Nazw",
-    "accountTracker": "Śledzenie Konta"
+    "accountTracker": "Śledzenie Konta",
+    "generatorLink": "Generator",
+    "trackerLink": "Śledzenie Konta"
   },
   "generator": {
     "title": "Generator Nazw",
     "description": "Szukasz wolnej tagline dla swojej wymarzonej nazwy w grze? Wypróbuj Generator.",
     "findAvailableTaglines": "Znajdź dostępne tagline",
-    "availableTaglines": "Dostępne tagline dla {username}"
+    "availableTaglines": "Dostępne tagline dla {username}",
+    "noTaglinesFound": "Nie znaleziono dostępnych tagline dla tej nazwy użytkownika"
   },
   "tracker": {
     "title": "Śledzenie Konta",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "Nazwa użytkownika musi mieć co najmniej 3 znaki",
     "invalidCharacters": "Dozwolone są tylko litery i cyfry"
+  },
+  "leaderboard": {
+    "title": "Ranking League of Legends",
+    "description": "Ranking najwyższych poziomów graczy League of Legends będzie wkrótce dostępny tutaj."
+  },
+  "match": {
+    "title": "Wyszukiwarka Meczy League of Legends",
+    "description": "Narzędzie do wyszukiwania meczy będzie wkrótce dostępne tutaj."
   },
   "faq": {
     "title": "LolNames.gg FAQ",

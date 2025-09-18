@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "Szabad tagline-t keres álmai játékbeli nevéhez? Próbálja ki a Generátort.",
     "accountTrackerDescription": "Szeretne egy adott fiókot követni névváltásokon keresztül? Használja a Fiók Követőt",
     "nameGenerator": "Név Generátor",
-    "accountTracker": "Fiók Követő"
+    "accountTracker": "Fiók Követő",
+    "generatorLink": "Generátor",
+    "trackerLink": "Fiók Követő"
   },
   "generator": {
     "title": "Név Generátor",
     "description": "Szabad tagline-t keres álmai játékbeli nevéhez? Próbálja ki a Generátort.",
     "findAvailableTaglines": "Elérhető tagline-ok keresése",
-    "availableTaglines": "Elérhető tagline-ok a {username} számára"
+    "availableTaglines": "Elérhető tagline-ok a {username} számára",
+    "noTaglinesFound": "Nem található elérhető tagline ehhez a felhasználónévhez"
   },
   "tracker": {
     "title": "Fiók Követő",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "A felhasználónévnek legalább 3 karakterből kell állnia",
     "invalidCharacters": "Csak betűk és számok engedélyezettek"
+  },
+  "leaderboard": {
+    "title": "League of Legends Ranglista",
+    "description": "A legmagasabb szintű League of Legends játékosok ranglistája hamarosan itt lesz elérhető."
+  },
+  "match": {
+    "title": "League of Legends Mérkőzés Keresés",
+    "description": "Egy mérkőzés kereső eszköz hamarosan itt lesz elérhető."
   },
   "faq": {
     "title": "LolNames.gg GYIK",

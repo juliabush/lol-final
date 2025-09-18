@@ -1,9 +1,12 @@
 import { SearchContainer } from '@/components/search-container'
+import { getTranslations } from 'next-intl/server'
 
-export default function MatchPage() {
+export default async function MatchPage() {
+  const t = await getTranslations('match')
+
   return (
-    <SearchContainer title="League of Legends Match Lookup">
-        <p>A match lookup tool will be available here soon.</p>
+    <SearchContainer title={t('title')} activeTab="matchLookup">
+        <p>{t('description')}</p>
         </SearchContainer>
   )
 }

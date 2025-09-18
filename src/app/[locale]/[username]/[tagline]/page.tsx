@@ -92,10 +92,10 @@ export default async function NameResult({
       <p>{t('howItWorksDescription')}</p>
 
       <h2>{t('nameGenerator')}</h2>
-      <p>{t('nameGeneratorDescription')} <Link href={`/${locale}/generator`}>Generator</Link>.</p>
+      <p>{t('nameGeneratorDescription')} <Link href={`/${locale}/generator`}>{t('generatorLink')}</Link>.</p>
 
       <h2>{t('accountTracker')}</h2>
-      <p>{t('accountTrackerDescription')} <Link href={`/${locale}/tracker`}>Account Tracker</Link></p>
+      <p>{t('accountTrackerDescription')} <Link href={`/${locale}/tracker`}>{t('trackerLink')}</Link></p>
     </SearchContainer>
   )
 }

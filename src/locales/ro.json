@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "Cauți o tagline gratuită pentru numele tău de vis în joc? Încearcă Generatorul.",
     "accountTrackerDescription": "Vrei să urmărești un cont specific prin schimbările de nume? Folosește Urmăritorul de Conturi",
     "nameGenerator": "Generator Nume",
-    "accountTracker": "Urmăritor Conturi"
+    "accountTracker": "Urmăritor Conturi",
+    "generatorLink": "Generator",
+    "trackerLink": "Urmăritor Conturi"
   },
   "generator": {
     "title": "Generator Nume",
     "description": "Cauți o tagline gratuită pentru numele tău de vis în joc? Încearcă Generatorul.",
     "findAvailableTaglines": "Găsește tagline-uri disponibile",
-    "availableTaglines": "Tagline-uri disponibile pentru {username}"
+    "availableTaglines": "Tagline-uri disponibile pentru {username}",
+    "noTaglinesFound": "Nu s-au găsit tagline-uri disponibile pentru acest nume de utilizator"
   },
   "tracker": {
     "title": "Urmăritor Conturi",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "Numele de utilizator trebuie să aibă cel puțin 3 caractere",
     "invalidCharacters": "Sunt permise doar litere și cifre"
+  },
+  "leaderboard": {
+    "title": "Clasament League of Legends",
+    "description": "Un clasament al jucătorilor League of Legends de cel mai înalt nivel va fi disponibil aici în curând."
+  },
+  "match": {
+    "title": "Căutare Meciuri League of Legends",
+    "description": "Un instrument de căutare meciuri va fi disponibil aici în curând."
   },
   "faq": {
     "title": "LolNames.gg Întrebări Frecvente",

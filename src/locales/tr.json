@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "Hayalinizdeki oyundaki isim için ücretsiz bir tagline mi arıyorsunuz? Üreticiyi deneyin.",
     "accountTrackerDescription": "Belirli bir hesabı isim değişiklikleri boyunca takip etmek mi istiyorsunuz? Hesap Takipçisini kullanın",
     "nameGenerator": "İsim Üreticisi",
-    "accountTracker": "Hesap Takipçisi"
+    "accountTracker": "Hesap Takipçisi",
+    "generatorLink": "Üretici",
+    "trackerLink": "Hesap Takipçisi"
   },
   "generator": {
     "title": "İsim Üreticisi",
     "description": "Hayalinizdeki oyundaki isim için ücretsiz bir tagline mi arıyorsunuz? Üreticiyi deneyin.",
     "findAvailableTaglines": "Müsait tagline'ları bul",
-    "availableTaglines": "{username} için müsait tagline'lar"
+    "availableTaglines": "{username} için müsait tagline'lar",
+    "noTaglinesFound": "Bu kullanıcı adı için müsait tagline bulunamadı"
   },
   "tracker": {
     "title": "Hesap Takipçisi",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "Kullanıcı adı en az 3 karakter olmalıdır",
     "invalidCharacters": "Sadece harfler ve rakamlar izin verilir"
+  },
+  "leaderboard": {
+    "title": "League of Legends Liderlik Tablosu",
+    "description": "En yüksek seviyeli League of Legends oyuncularının liderlik tablosu yakında burada olacak."
+  },
+  "match": {
+    "title": "League of Legends Maç Arama",
+    "description": "Bir maç arama aracı yakında burada olacak."
   },
   "faq": {
     "title": "LolNames.gg Sık Sorulan Sorular",

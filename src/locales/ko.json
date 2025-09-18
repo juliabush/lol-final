@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "꿈의 게임 내 이름을 위한 무료 태그라인을 찾고 계신가요? 생성기를 사용해보세요.",
     "accountTrackerDescription": "이름 변경을 통해 특정 계정을 따라가고 싶으신가요? 계정 추적기를 사용하세요",
     "nameGenerator": "이름 생성기",
-    "accountTracker": "계정 추적기"
+    "accountTracker": "계정 추적기",
+    "generatorLink": "생성기",
+    "trackerLink": "계정 추적기"
   },
   "generator": {
     "title": "이름 생성기",
     "description": "꿈의 게임 내 이름을 위한 무료 태그라인을 찾고 계신가요? 생성기를 사용해보세요.",
     "findAvailableTaglines": "사용 가능한 태그라인 찾기",
-    "availableTaglines": "{username}에 대한 사용 가능한 태그라인"
+    "availableTaglines": "{username}에 대한 사용 가능한 태그라인",
+    "noTaglinesFound": "이 사용자 이름에 사용 가능한 태그라인을 찾을 수 없습니다"
   },
   "tracker": {
     "title": "계정 추적기",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "사용자 이름은 최소 3자 이상이어야 합니다",
     "invalidCharacters": "문자와 숫자만 허용됩니다"
+  },
+  "leaderboard": {
+    "title": "리그 오브 레전드 리더보드",
+    "description": "최고 레벨의 리그 오브 레전드 플레이어들의 리더보드가 곧 여기에서 제공될 예정입니다."
+  },
+  "match": {
+    "title": "리그 오브 레전드 매치 검색",
+    "description": "매치 검색 도구가 곧 여기에서 제공될 예정입니다."
   },
   "faq": {
     "title": "LolNames.gg 자주 묻는 질문",

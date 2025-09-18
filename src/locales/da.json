@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "Leder du efter en gratis tagline til dit drømme in-game navn? Prøv Generatoren.",
     "accountTrackerDescription": "Vil du følge en specifik konto gennem navneændringer? Brug Konto Trackeren",
     "nameGenerator": "Navn Generator",
-    "accountTracker": "Konto Tracker"
+    "accountTracker": "Konto Tracker",
+    "generatorLink": "Generator",
+    "trackerLink": "Konto Tracker"
   },
   "generator": {
     "title": "Navn Generator",
     "description": "Leder du efter en gratis tagline til dit drømme in-game navn? Prøv Generatoren.",
     "findAvailableTaglines": "Find tilgængelige taglines",
-    "availableTaglines": "Tilgængelige taglines for {username}"
+    "availableTaglines": "Tilgængelige taglines for {username}",
+    "noTaglinesFound": "Ingen tilgængelige taglines fundet for dette brugernavn"
   },
   "tracker": {
     "title": "Konto Tracker",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "Brugernavn skal være mindst 3 tegn",
     "invalidCharacters": "Kun bogstaver og tal er tilladt"
+  },
+  "leaderboard": {
+    "title": "League of Legends Rangliste",
+    "description": "En rangliste over de højeste niveau League of Legends spillere vil være tilgængelig her snart."
+  },
+  "match": {
+    "title": "League of Legends Match Opslag",
+    "description": "Et match opslag værktøj vil være tilgængelig her snart."
   },
   "faq": {
     "title": "LolNames.gg FAQ",

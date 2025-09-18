@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "Ищете свободный тег для вашего мечтательного имени в игре? Попробуйте Генератор.",
     "accountTrackerDescription": "Хотите следить за конкретным аккаунтом через смены имён? Используйте Трекер Аккаунтов",
     "nameGenerator": "Генератор Имён",
-    "accountTracker": "Трекер Аккаунтов"
+    "accountTracker": "Трекер Аккаунтов",
+    "generatorLink": "Генератор",
+    "trackerLink": "Трекер Аккаунтов"
   },
   "generator": {
     "title": "Генератор Имён",
     "description": "Ищете свободный тег для вашего мечтательного имени в игре? Попробуйте Генератор.",
     "findAvailableTaglines": "Найти доступные теги",
-    "availableTaglines": "Доступные теги для {username}"
+    "availableTaglines": "Доступные теги для {username}",
+    "noTaglinesFound": "Не найдено доступных тегов для этого имени пользователя"
   },
   "tracker": {
     "title": "Трекер Аккаунтов",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "Имя пользователя должно содержать минимум 3 символа",
     "invalidCharacters": "Разрешены только буквы и цифры"
+  },
+  "leaderboard": {
+    "title": "Таблица лидеров League of Legends",
+    "description": "Таблица лидеров игроков League of Legends самого высокого уровня скоро будет доступна здесь."
+  },
+  "match": {
+    "title": "Поиск матчей League of Legends",
+    "description": "Инструмент поиска матчей скоро будет доступен здесь."
   },
   "faq": {
     "title": "LolNames.gg Часто Задаваемые Вопросы",

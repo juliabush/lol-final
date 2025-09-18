@@ -1,9 +1,12 @@
 import { SearchContainer } from '@/components/search-container'
+import { getTranslations } from 'next-intl/server'
 
-export default function LeaderboardPage() {
+export default async function LeaderboardPage() {
+  const t = await getTranslations('leaderboard')
+
   return (
-    <SearchContainer title="League of Legends Leaderboard">
-        <p>A leaderboard of the highest level League of Legends players will be available here soon.</p>
+    <SearchContainer title={t('title')} activeTab="leaderboard">
+        <p>{t('description')}</p>
     </SearchContainer>
   )
 }

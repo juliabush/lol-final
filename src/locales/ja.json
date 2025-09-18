@@ -37,13 +37,16 @@
     "nameGeneratorDescription": "理想のゲーム内名前のための無料タグラインをお探しですか？ジェネレーターをお試しください。",
     "accountTrackerDescription": "名前変更を通じて特定のアカウントをフォローしたいですか？アカウントトラッカーを使用してください",
     "nameGenerator": "名前ジェネレーター",
-    "accountTracker": "アカウントトラッカー"
+    "accountTracker": "アカウントトラッカー",
+    "generatorLink": "ジェネレーター",
+    "trackerLink": "アカウントトラッカー"
   },
   "generator": {
     "title": "名前ジェネレーター",
     "description": "理想のゲーム内名前のための無料タグラインをお探しですか？ジェネレーターをお試しください。",
     "findAvailableTaglines": "利用可能なタグラインを検索",
-    "availableTaglines": "{username} の利用可能なタグライン"
+    "availableTaglines": "{username} の利用可能なタグライン",
+    "noTaglinesFound": "このユーザー名の利用可能なタグラインが見つかりません"
   },
   "tracker": {
     "title": "アカウントトラッカー",
@@ -62,6 +65,14 @@
   "errors": {
     "minLength": "ユーザー名は3文字以上である必要があります",
     "invalidCharacters": "文字と数字のみ許可されています"
+  },
+  "leaderboard": {
+    "title": "リーグ・オブ・レジェンド リーダーボード",
+    "description": "最高レベルのリーグ・オブ・レジェンドプレイヤーのリーダーボードがまもなくここで利用可能になります。"
+  },
+  "match": {
+    "title": "リーグ・オブ・レジェンド マッチ検索",
+    "description": "マッチ検索ツールがまもなくここで利用可能になります。"
   },
   "faq": {
     "title": "LolNames.gg よくある質問",
