@@ -19,13 +19,15 @@ export function NameGenerator({
   const tChecker = useTranslations('checker')
   const tGenerator = useTranslations('generator')
   const tErrors = useTranslations('errors')
-  const [username, setUsername] = useState(defaultUsername)
+  // Initialize state with correct priority: URL params > localStorage > empty
+  const [username, setUsername] = useState(() => {
+    return defaultUsername || localStorage.getItem('riotUsername') || ''
+  })
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Load values on component mount - prioritize URL params over localStorage
+  // Update state when URL parameters change
   useEffect(() => {
-    // Use URL parameters if available, otherwise fall back to localStorage, then defaults
     const finalUsername = defaultUsername || localStorage.getItem('riotUsername') || ''
     setUsername(finalUsername)
   }, [defaultUsername])

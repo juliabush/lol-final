@@ -21,13 +21,18 @@ export function AccountTracker({
   const tCommon = useTranslations('common')
   const tChecker = useTranslations('checker')
   
-  const [username, setUsername] = useState(defaultUsername)
-  const [tagline, setTagline] = useState(defaultTagline)
+  // Initialize state with correct priority: URL params > localStorage > empty
+  const [username, setUsername] = useState(() => {
+    return defaultUsername || localStorage.getItem('riotUsername') || ''
+  })
+  const [tagline, setTagline] = useState(() => {
+    return defaultTagline || localStorage.getItem('riotTagline') || ''
+  })
   const [showTooltip, setShowTooltip] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Load values on component mount - prioritize URL params over localStorage
+  // Update state when URL parameters change
   useEffect(() => {
     // Use URL parameters if available, otherwise fall back to localStorage, then defaults
     const finalUsername = defaultUsername || localStorage.getItem('riotUsername') || ''
