@@ -21,11 +21,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LolNames.gg",
-  description: "League of Legends Name Checker, Name Generator, Account Tracker, Leaderboard and Match Lookup.",
+  title: "LolNames.gg - League of Legends Name Checker & Generator",
+  description: "Check League of Legends summoner names, generate unique LoL names, track accounts, view leaderboards, and lookup matches.",
+  openGraph: {
+    title: "LolNames.gg - League of Legends Name Checker & Generator",
+    description: "Check League of Legends summoner names, generate unique LoL names, track accounts, view leaderboards, and lookup matches.",
+    url: "https://lolnames.gg",
+    siteName: "LolNames.gg",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.png",
-  }
+  },
 }
 
 export default async function LocaleLayout({
