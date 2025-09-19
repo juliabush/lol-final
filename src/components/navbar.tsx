@@ -49,7 +49,7 @@ export function Navbar({ locale, navLabels }: NavbarProps) {
         </button>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 pl-6 lg:pl-0 ">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm hover:underline">
               {link.label}
