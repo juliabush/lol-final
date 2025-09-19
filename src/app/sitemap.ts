@@ -1,9 +1,8 @@
 import { MetadataRoute } from 'next'
-import { routing } from '@/i18n/routing'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://lolnames.gg'
-  const locales = routing.locales
+  const locales = ['en', 'de', 'fr', 'hu', 'da', 'it', 'pl', 'pt', 'ro', 'ru', 'es', 'tr', 'ko', 'ja']
   
   // Static pages for each locale
   const staticPages = [
