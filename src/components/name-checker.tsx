@@ -66,8 +66,8 @@ export function NameChecker({
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex gap-4 mb-6">
-        <div className="flex-1">
+      <div className="flex gap-4 mb-6 justify-center">
+        <div className="w-32">
           <label htmlFor="username" className="block text-sm font-medium mb-1">
             In-game name
           </label>
@@ -80,7 +80,7 @@ export function NameChecker({
           />
         </div>
 
-        <div className="relative w-24">
+        <div className="w-24">
           <label htmlFor="tagline" className="block text-sm font-medium mb-1">
             Tagline
           </label>

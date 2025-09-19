@@ -86,8 +86,8 @@ export function AccountTracker({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="flex gap-4 mb-6">
-          <div className="flex-1">
+        <div className="flex gap-4 mb-6 justify-center">
+          <div className="w-32">
             <label htmlFor="username" className="block text-sm font-medium mb-1">
               In-game name
             </label>
