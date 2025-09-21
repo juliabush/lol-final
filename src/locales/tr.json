@@ -17,6 +17,10 @@
   },
   "checker": {
     "title": "LoL ve Riot İsim Kontrolcüsü",
+    "metaTitle": "LoL İsim Kontrolcüsü - League of Legends isimlerinin müsait olup olmadığını kontrol edin",
+    "metaDescription": "League of Legends çağırıcı isimlerinin müsait olup olmadığını kontrol edin. Kullanıcı adı ve tagline ile arama yaparak istediğiniz LoL isminin müsait mi yoksa kullanımda mı olduğunu görün.",
+    "metaTitleResult": "{username}#{tagline} müsait mi? - LoL İsim Kontrolcüsü",
+    "metaDescriptionResult": "League of Legends ismi {username}#{tagline} müsait mi yoksa kullanımda mı kontrol edin. Bu LoL çağırıcı ismi için oyuncu detaylarını ve hesap bilgilerini görün.",
     "inGameName": "Oyundaki isim",
     "tagline": "Tagline",
     "enterUsername": "Kullanıcı adını girin",
@@ -43,6 +47,10 @@
   },
   "generator": {
     "title": "İsim Üreticisi",
+    "metaTitle": "LoL İsim Üretici - Benzersiz League of Legends isimleri oluşturun",
+    "metaDescription": "Benzersiz League of Legends çağırıcı isimleri oluşturun. Özel taglines ile harika ve müsait LoL kullanıcı isimleri oluşturun. League hesabınız için mükemmel ismi bulun.",
+    "metaTitleResult": "{username} için Taglines Oluştur - LoL İsim Üretici",
+    "metaDescriptionResult": "League of Legends kullanıcı ismi {username} için müsait taglines oluşturun. Mükemmel LoL çağırıcı isminizi tamamlamak için benzersiz taglines bulun.",
     "description": "Hayalinizdeki oyundaki isim için ücretsiz bir tagline mi arıyorsunuz? Üreticiyi deneyin.",
     "findAvailableTaglines": "Müsait tagline'ları bul",
     "availableTaglines": "{username} için müsait tagline'lar",
@@ -50,6 +58,8 @@
   },
   "tracker": {
     "title": "Hesap Takipçisi",
+    "metaTitle": "LoL Hesap Takipçisi - PUUID ile League of Legends hesaplarını takip edin",
+    "metaDescription": "PUUID ile League of Legends hesaplarını takip edin. Oyuncu isim değişikliklerini takip edin, hesap detaylarını görüntüleyin ve favori LoL oyuncularınızı izleyin.",
     "description": "Belirli bir hesabı isim değişiklikleri boyunca takip etmek mi istiyorsunuz? Hesap Takipçisini kullanın",
     "loadingPlayer": "Oyuncu bilgileri yükleniyor...",
     "noLolData": "LoL verisi bulunamadı.",

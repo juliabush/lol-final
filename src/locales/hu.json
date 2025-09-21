@@ -15,8 +15,17 @@
     "matchLookup": "Mérkőzés Keresés",
     "faq": "GYIK"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - League of Legends Név Ellenőrző és Generátor",
+    "defaultDescription": "Ellenőrizze a League of Legends summoner neveket, generáljon egyedi LoL neveket, kövesse a fiókokat, tekintse meg a ranglistákat és keressen mérkőzéseket."
+  },
   "checker": {
     "title": "LoL és Riot Név Ellenőrző",
+    "metaTitle": "LoL Név Ellenőrző - Ellenőrizze, hogy a League of Legends nevek elérhetőek-e",
+    "metaDescription": "Ellenőrizze, hogy a League of Legends summoner nevek elérhetőek-e. Keresés felhasználónév és tagline alapján, hogy lássa, a kívánt LoL név elérhető-e vagy foglalt.",
+    "metaTitleResult": "Elérhető-e a {username}#{tagline}? - LoL Név Ellenőrző",
+    "metaDescriptionResult": "Ellenőrizze, hogy a League of Legends név {username}#{tagline} elérhető-e vagy foglalt. Tekintse meg a játékos részleteit és fiók információit ehhez a LoL summoner névhez.",
     "inGameName": "Játékbeli név",
     "tagline": "Tagline",
     "enterUsername": "Adja meg a felhasználónevet",
@@ -43,6 +52,10 @@
   },
   "generator": {
     "title": "Név Generátor",
+    "metaTitle": "LoL Név Generátor - Generáljon egyedi League of Legends neveket",
+    "metaDescription": "Generáljon egyedi League of Legends summoner neveket. Hozzon létre menő, elérhető LoL felhasználóneveket egyedi taglines-ekkel. Találja meg a tökéletes nevet a League fiókjához.",
+    "metaTitleResult": "Taglines generálása {username} számára - LoL Név Generátor",
+    "metaDescriptionResult": "Generáljon elérhető taglines-eket a League of Legends felhasználónévhez {username}. Találjon egyedi taglines-eket a tökéletes LoL summoner név befejezéséhez.",
     "description": "Szabad tagline-t keres álmai játékbeli nevéhez? Próbálja ki a Generátort.",
     "findAvailableTaglines": "Elérhető tagline-ok keresése",
     "availableTaglines": "Elérhető tagline-ok a {username} számára",
@@ -50,6 +63,8 @@
   },
   "tracker": {
     "title": "Fiók Követő",
+    "metaTitle": "LoL Fiók Követő - League of Legends fiókok követése PUUID alapján",
+    "metaDescription": "League of Legends fiókok követése PUUID alapján. Kövesse a játékos névváltásokat, tekintse meg a fiók részleteket és figyelje kedvenc LoL játékosait.",
     "description": "Szeretne egy adott fiókot követni névváltásokon keresztül? Használja a Fiók Követőt",
     "loadingPlayer": "Játékos információk betöltése...",
     "noLolData": "Nem található LoL adat.",

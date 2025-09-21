@@ -17,6 +17,10 @@
   },
   "checker": {
     "title": "Verificador de Nomes LoL e Riot",
+    "metaTitle": "Verificador de Nomes LoL - Verifique se os nomes do League of Legends estão disponíveis",
+    "metaDescription": "Verifique se os nomes de invocador do League of Legends estão disponíveis. Pesquise por nome de usuário e tagline para ver se seu nome LoL desejado está disponível ou em uso.",
+    "metaTitleResult": "{username}#{tagline} está disponível? - Verificador de Nomes LoL",
+    "metaDescriptionResult": "Verifique se o nome do League of Legends {username}#{tagline} está disponível ou em uso. Veja detalhes do jogador e informações da conta para este nome de invocador LoL.",
     "inGameName": "Nome no jogo",
     "tagline": "Tagline",
     "enterUsername": "Digite o nome de usuário",
@@ -43,6 +47,10 @@
   },
   "generator": {
     "title": "Gerador de Nomes",
+    "metaTitle": "Gerador de Nomes LoL - Gere nomes únicos do League of Legends",
+    "metaDescription": "Gere nomes de invocador únicos do League of Legends. Crie nomes de usuário LoL legais e disponíveis com taglines personalizadas. Encontre o nome perfeito para sua conta League.",
+    "metaTitleResult": "Gerar Taglines para {username} - Gerador de Nomes LoL",
+    "metaDescriptionResult": "Gere taglines disponíveis para o nome de usuário do League of Legends {username}. Encontre taglines únicas para completar seu nome de invocador LoL perfeito.",
     "description": "Procurando uma tagline gratuita para seu nome no jogo dos sonhos? Experimente o Gerador.",
     "findAvailableTaglines": "Encontrar taglines disponíveis",
     "availableTaglines": "Taglines disponíveis para {username}",
@@ -50,6 +58,8 @@
   },
   "tracker": {
     "title": "Rastreador de Conta",
+    "metaTitle": "Rastreador de Conta LoL - Rastreie contas do League of Legends por PUUID",
+    "metaDescription": "Rastreie contas do League of Legends por PUUID. Acompanhe mudanças de nomes de jogadores, veja detalhes de contas e monitore seus jogadores LoL favoritos.",
     "description": "Quer acompanhar uma conta específica através de mudanças de nome? Use o Rastreador de Conta",
     "loadingPlayer": "Carregando informações do jogador...",
     "noLolData": "Nenhum dado LoL encontrado.",

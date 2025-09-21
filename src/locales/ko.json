@@ -17,6 +17,10 @@
   },
   "checker": {
     "title": "LoL 및 Riot 이름 확인기",
+    "metaTitle": "LoL 이름 확인기 - 리그 오브 레전드 이름 사용 가능 여부 확인",
+    "metaDescription": "리그 오브 레전드 소환사 이름이 사용 가능한지 확인하세요. 사용자 이름과 태그라인으로 검색하여 원하는 LoL 이름이 사용 가능한지 확인하세요.",
+    "metaTitleResult": "{username}#{tagline} 사용 가능한가요? - LoL 이름 확인기",
+    "metaDescriptionResult": "리그 오브 레전드 이름 {username}#{tagline}이 사용 가능한지 또는 사용 중인지 확인하세요. 이 LoL 소환사 이름의 플레이어 세부 정보와 계정 정보를 확인하세요.",
     "inGameName": "게임 내 이름",
     "tagline": "태그라인",
     "enterUsername": "사용자 이름 입력",
@@ -43,6 +47,10 @@
   },
   "generator": {
     "title": "이름 생성기",
+    "metaTitle": "LoL 이름 생성기 - 고유한 리그 오브 레전드 이름 생성",
+    "metaDescription": "고유한 리그 오브 레전드 소환사 이름을 생성하세요. 사용자 정의 태그라인으로 멋지고 사용 가능한 LoL 사용자 이름을 만드세요. 리그 계정에 완벽한 이름을 찾으세요.",
+    "metaTitleResult": "{username}의 태그라인 생성 - LoL 이름 생성기",
+    "metaDescriptionResult": "리그 오브 레전드 사용자 이름 {username}에 대한 사용 가능한 태그라인을 생성하세요. 완벽한 LoL 소환사 이름을 완성하기 위한 고유한 태그라인을 찾으세요.",
     "description": "꿈의 게임 내 이름을 위한 무료 태그라인을 찾고 계신가요? 생성기를 사용해보세요.",
     "findAvailableTaglines": "사용 가능한 태그라인 찾기",
     "availableTaglines": "{username}에 대한 사용 가능한 태그라인",
@@ -50,6 +58,8 @@
   },
   "tracker": {
     "title": "계정 추적기",
+    "metaTitle": "LoL 계정 추적기 - PUUID로 리그 오브 레전드 계정 추적",
+    "metaDescription": "PUUID로 리그 오브 레전드 계정을 추적하세요. 플레이어 이름 변경을 따라가고, 계정 세부 정보를 확인하고, 좋아하는 LoL 플레이어를 모니터링하세요.",
     "description": "이름 변경을 통해 특정 계정을 따라가고 싶으신가요? 계정 추적기를 사용하세요",
     "loadingPlayer": "플레이어 정보 로딩 중...",
     "noLolData": "LoL 데이터를 찾을 수 없습니다.",

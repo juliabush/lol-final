@@ -17,19 +17,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
-export const metadata: Metadata = {
-  title: "LolNames.gg - League of Legends Name Checker & Generator",
-  description: "Check League of Legends summoner names, generate unique LoL names, track accounts, view leaderboards, and lookup matches.",
-  openGraph: {
-    title: "LolNames.gg - League of Legends Name Checker & Generator",
-    description: "Check League of Legends summoner names, generate unique LoL names, track accounts, view leaderboards, and lookup matches.",
-    url: "https://lolnames.gg",
-    siteName: "LolNames.gg",
-    type: "website",
-  },
-  icons: {
-    icon: "/favicon.png",
-  },
+export async function generateMetadata({
+  params
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const { locale } = params
+  const t = await getTranslations("metadata")
+  
+  return {
+    title: t("defaultTitle"),
+    description: t("defaultDescription"),
+    openGraph: {
+      title: t("defaultTitle"),
+      description: t("defaultDescription"),
+      url: "https://lolnames.gg",
+      siteName: t("siteName"),
+      type: "website",
+    },
+    icons: {
+      icon: "/favicon.png",
+    },
+  }
 }
 
 export default async function LocaleLayout({

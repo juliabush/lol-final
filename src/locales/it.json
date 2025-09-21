@@ -17,6 +17,10 @@
   },
   "checker": {
     "title": "Controllore Nomi LoL e Riot",
+    "metaTitle": "Controllore Nomi LoL - Controlla se i nomi di League of Legends sono disponibili",
+    "metaDescription": "Controlla se i nomi evocatore di League of Legends sono disponibili. Cerca per nome utente e tagline per vedere se il tuo nome LoL desiderato è disponibile o in uso.",
+    "metaTitleResult": "{username}#{tagline} è disponibile? - Controllore Nomi LoL",
+    "metaDescriptionResult": "Controlla se il nome League of Legends {username}#{tagline} è disponibile o in uso. Vedi i dettagli del giocatore e le informazioni dell'account per questo nome evocatore LoL.",
     "inGameName": "Nome in gioco",
     "tagline": "Tagline",
     "enterUsername": "Inserisci nome utente",
@@ -43,6 +47,10 @@
   },
   "generator": {
     "title": "Generatore Nomi",
+    "metaTitle": "Generatore di Nomi LoL - Genera nomi unici di League of Legends",
+    "metaDescription": "Genera nomi evocatore unici di League of Legends. Crea nomi utente LoL fantastici e disponibili con taglines personalizzate. Trova il nome perfetto per il tuo account League.",
+    "metaTitleResult": "Genera Taglines per {username} - Generatore di Nomi LoL",
+    "metaDescriptionResult": "Genera taglines disponibili per il nome utente League of Legends {username}. Trova taglines uniche per completare il tuo nome evocatore LoL perfetto.",
     "description": "Cerchi una tagline libera per il tuo nome in gioco dei sogni? Prova il Generatore.",
     "findAvailableTaglines": "Trova tagline disponibili",
     "availableTaglines": "Tagline disponibili per {username}",
@@ -50,6 +58,8 @@
   },
   "tracker": {
     "title": "Tracciatore Account",
+    "metaTitle": "Tracciatore Account LoL - Traccia account League of Legends tramite PUUID",
+    "metaDescription": "Traccia account League of Legends tramite PUUID. Segui i cambi di nome dei giocatori, visualizza i dettagli degli account e monitora i tuoi giocatori LoL preferiti.",
     "description": "Vuoi seguire un account specifico attraverso i cambi di nome? Usa il Tracciatore Account",
     "loadingPlayer": "Caricamento informazioni giocatore...",
     "noLolData": "Nessun dato LoL trovato.",

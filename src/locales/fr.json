@@ -15,8 +15,17 @@
     "matchLookup": "Recherche de Match",
     "faq": "FAQ"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - Vérificateur et Générateur de Noms League of Legends",
+    "defaultDescription": "Vérifiez les noms d'invocateur League of Legends, générez des noms LoL uniques, suivez les comptes, consultez les classements et recherchez des matchs."
+  },
   "checker": {
     "title": "Vérificateur de Noms LoL et Riot",
+    "metaTitle": "Vérificateur de Noms LoL - Vérifiez si les noms League of Legends sont disponibles",
+    "metaDescription": "Vérifiez si les noms d'invocateur League of Legends sont disponibles. Recherchez par nom d'utilisateur et tagline pour voir si votre nom LoL souhaité est pris ou libre d'utilisation.",
+    "metaTitleResult": "Est-ce que {username}#{tagline} est disponible? - Vérificateur de Noms LoL",
+    "metaDescriptionResult": "Vérifiez si le nom League of Legends {username}#{tagline} est disponible ou pris. Voir les détails du joueur et les informations du compte pour ce nom d'invocateur LoL.",
     "inGameName": "Nom en jeu",
     "tagline": "Tagline",
     "enterUsername": "Entrez le nom d'utilisateur",
@@ -43,6 +52,10 @@
   },
   "generator": {
     "title": "Générateur de Noms",
+    "metaTitle": "Générateur de Noms LoL - Générez des noms League of Legends uniques",
+    "metaDescription": "Générez des noms d'invocateur League of Legends uniques. Créez des noms d'utilisateur LoL cool et disponibles avec des taglines personnalisées. Trouvez le nom parfait pour votre compte League.",
+    "metaTitleResult": "Générer des Taglines pour {username} - Générateur de Noms LoL",
+    "metaDescriptionResult": "Générez des taglines disponibles pour le nom d'utilisateur League of Legends {username}. Trouvez des taglines uniques pour compléter votre nom d'invocateur LoL parfait.",
     "description": "Vous cherchez une tagline libre pour votre nom en jeu de rêve ? Essayez le Générateur.",
     "findAvailableTaglines": "Trouver des taglines disponibles",
     "availableTaglines": "Taglines disponibles pour {username}",
@@ -50,6 +63,8 @@
   },
   "tracker": {
     "title": "Suivi de Compte",
+    "metaTitle": "Suivi de Compte LoL - Suivez les comptes League of Legends par PUUID",
+    "metaDescription": "Suivez les comptes League of Legends par PUUID. Suivez les changements de noms de joueurs, consultez les détails des comptes et surveillez vos joueurs LoL favoris.",
     "description": "Vous voulez suivre un compte spécifique à travers les changements de nom ? Utilisez le Suivi de Compte",
     "loadingPlayer": "Chargement des informations du joueur...",
     "noLolData": "Aucune donnée LoL trouvée.",

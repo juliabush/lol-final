@@ -11,11 +11,22 @@ export async function generateMetadata({
 }: {
   params: Promise<{ username: string; locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params
+  const { username, locale } = await params
+  const decodedUsername = decodeURIComponent(username)
+  const t = await getTranslations('generator')
   
   return {
+    title: t('metaTitleResult', { username: decodedUsername }) + ` | LolNames.gg`,
+    description: t('metaDescriptionResult', { username: decodedUsername }),
     alternates: {
       canonical: `https://lolnames.gg/${locale}/generator`
+    },
+    openGraph: {
+      title: t('metaTitleResult', { username: decodedUsername }) + ` | LolNames.gg`,
+      description: t('metaDescriptionResult', { username: decodedUsername }),
+      url: `https://lolnames.gg/${locale}/generator`,
+      siteName: "LolNames.gg",
+      type: "website",
     }
   }
 }

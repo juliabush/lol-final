@@ -15,8 +15,17 @@
     "matchLookup": "Match Søgning",
     "faq": "FAQ"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - League of Legends Navn Tjekker & Generator",
+    "defaultDescription": "Tjek League of Legends summoner navne, generer unikke LoL navne, følg konti, se ranglister og søg efter kampe."
+  },
   "checker": {
     "title": "LoL og Riot Navn Tjekker",
+    "metaTitle": "LoL Navn Tjekker - Tjek om League of Legends navne er tilgængelige",
+    "metaDescription": "Tjek om League of Legends summoner navne er tilgængelige. Søg efter brugernavn og tagline for at se om dit ønskede LoL navn er tilgængeligt eller optaget.",
+    "metaTitleResult": "Er {username}#{tagline} tilgængeligt? - LoL Navn Tjekker",
+    "metaDescriptionResult": "Tjek om League of Legends navnet {username}#{tagline} er tilgængeligt eller optaget. Se spiller detaljer og konto information for dette LoL summoner navn.",
     "inGameName": "In-game navn",
     "tagline": "Tagline",
     "enterUsername": "Indtast brugernavn",
@@ -43,6 +52,10 @@
   },
   "generator": {
     "title": "Navn Generator",
+    "metaTitle": "LoL Navn Generator - Generer unikke League of Legends navne",
+    "metaDescription": "Generer unikke League of Legends summoner navne. Opret seje, tilgængelige LoL brugernavne med brugerdefinerede taglines. Find det perfekte navn til din League konto.",
+    "metaTitleResult": "Generer Taglines for {username} - LoL Navn Generator",
+    "metaDescriptionResult": "Generer tilgængelige taglines for League of Legends brugernavnet {username}. Find unikke taglines for at fuldføre dit perfekte LoL summoner navn.",
     "description": "Leder du efter en gratis tagline til dit drømme in-game navn? Prøv Generatoren.",
     "findAvailableTaglines": "Find tilgængelige taglines",
     "availableTaglines": "Tilgængelige taglines for {username}",
@@ -50,6 +63,8 @@
   },
   "tracker": {
     "title": "Konto Tracker",
+    "metaTitle": "LoL Konto Tracker - Følg League of Legends konti via PUUID",
+    "metaDescription": "Følg League of Legends konti via PUUID. Følg spiller navneændringer, se konto detaljer og overvåg dine favorit LoL spillere.",
     "description": "Vil du følge en specifik konto gennem navneændringer? Brug Konto Trackeren",
     "loadingPlayer": "Indlæser spiller information...",
     "noLolData": "Ingen LoL data fundet.",

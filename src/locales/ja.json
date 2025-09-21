@@ -15,8 +15,17 @@
     "matchLookup": "マッチ検索",
     "faq": "よくある質問"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - リーグ・オブ・レジェンド 名前チェッカー & ジェネレーター",
+    "defaultDescription": "リーグ・オブ・レジェンドのサモナー名を確認し、ユニークなLoL名を生成し、アカウントを追跡し、リーダーボードを表示し、マッチを検索します。"
+  },
   "checker": {
     "title": "LoLとRiot名前チェッカー",
+    "metaTitle": "LoL名前チェッカー - リーグ・オブ・レジェンドの名前が利用可能かチェック",
+    "metaDescription": "リーグ・オブ・レジェンドのサモナー名が利用可能かチェック。ユーザー名とタグラインで検索して、希望するLoL名が使用可能かどうか確認。",
+    "metaTitleResult": "{username}#{tagline}は利用可能？ - LoL名前チェッカー",
+    "metaDescriptionResult": "リーグ・オブ・レジェンドの名前{username}#{tagline}が利用可能か使用中かチェック。このLoLサモナー名のプレイヤー詳細とアカウント情報を確認。",
     "inGameName": "ゲーム内名前",
     "tagline": "タグライン",
     "enterUsername": "ユーザー名を入力",
@@ -43,6 +52,10 @@
   },
   "generator": {
     "title": "名前ジェネレーター",
+    "metaTitle": "LoL名前ジェネレーター - ユニークなリーグ・オブ・レジェンド名前を生成",
+    "metaDescription": "ユニークなリーグ・オブ・レジェンドサモナー名を生成。カスタムタグラインでクールで利用可能なLoLユーザー名を作成。リーグアカウントに最適な名前を見つけよう。",
+    "metaTitleResult": "{username}のタグラインを生成 - LoL名前ジェネレーター",
+    "metaDescriptionResult": "リーグ・オブ・レジェンドユーザー名{username}の利用可能なタグラインを生成。完璧なLoLサモナー名を完成させるためのユニークなタグラインを見つけよう。",
     "description": "理想のゲーム内名前のための無料タグラインをお探しですか？ジェネレーターをお試しください。",
     "findAvailableTaglines": "利用可能なタグラインを検索",
     "availableTaglines": "{username} の利用可能なタグライン",
@@ -50,6 +63,8 @@
   },
   "tracker": {
     "title": "アカウントトラッカー",
+    "metaTitle": "LoLアカウントトラッカー - PUUIDでリーグ・オブ・レジェンドアカウントを追跡",
+    "metaDescription": "PUUIDでリーグ・オブ・レジェンドアカウントを追跡。プレイヤーの名前変更をフォローし、アカウント詳細を表示し、お気に入りのLoLプレイヤーを監視。",
     "description": "名前変更を通じて特定のアカウントをフォローしたいですか？アカウントトラッカーを使用してください",
     "loadingPlayer": "プレイヤー情報を読み込み中...",
     "noLolData": "LoLデータが見つかりません。",

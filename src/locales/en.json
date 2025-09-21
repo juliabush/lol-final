@@ -15,8 +15,17 @@
     "matchLookup": "Match Lookup",
     "faq": "FAQ"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - League of Legends Name Checker & Generator",
+    "defaultDescription": "Check League of Legends summoner names, generate unique LoL names, track accounts, view leaderboards, and lookup matches."
+  },
   "checker": {
     "title": "LoL and Riot Name Checker",
+    "metaTitle": "LoL Name Checker - Check if League of Legends Names are Available",
+    "metaDescription": "Check if League of Legends summoner names are available. Search by username and tagline to see if your desired LoL name is taken or free to use.",
+    "metaTitleResult": "Is {username}#{tagline} Available? - LoL Name Checker",
+    "metaDescriptionResult": "Check if the League of Legends name {username}#{tagline} is available or taken. See player details and account information for this LoL summoner name.",
     "inGameName": "In-game name",
     "tagline": "Tagline",
     "enterUsername": "Enter username",
@@ -43,6 +52,10 @@
   },
   "generator": {
     "title": "Name Generator",
+    "metaTitle": "LoL Name Generator - Generate Unique League of Legends Names",
+    "metaDescription": "Generate unique League of Legends summoner names. Create cool, available LoL usernames with custom taglines. Find the perfect name for your League account.",
+    "metaTitleResult": "Generate Taglines for {username} - LoL Name Generator",
+    "metaDescriptionResult": "Generate available taglines for the League of Legends username {username}. Find unique taglines to complete your perfect LoL summoner name.",
     "description": "Looking for a free tagline for your dream in-game name? Try the Generator.",
     "findAvailableTaglines": "Find available taglines",
     "availableTaglines": "Available taglines for {username}",
@@ -50,6 +63,8 @@
   },
   "tracker": {
     "title": "Account Tracker",
+    "metaTitle": "LoL Account Tracker - Track League of Legends Accounts by PUUID",
+    "metaDescription": "Track League of Legends accounts by PUUID. Follow player name changes, view account details, and monitor your favorite LoL players.",
     "description": "Want to follow a specific account through name changes? Use the Account Tracker",
     "loadingPlayer": "Loading player information...",
     "noLolData": "No LoL data found.",

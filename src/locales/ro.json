@@ -17,6 +17,10 @@
   },
   "checker": {
     "title": "Verificator Nume LoL și Riot",
+    "metaTitle": "Verificator Nume LoL - Verifică dacă numele League of Legends sunt disponibile",
+    "metaDescription": "Verifică dacă numele de invocator League of Legends sunt disponibile. Caută după numele de utilizator și tagline pentru a vedea dacă numele LoL dorit este disponibil sau ocupat.",
+    "metaTitleResult": "Este {username}#{tagline} disponibil? - Verificator Nume LoL",
+    "metaDescriptionResult": "Verifică dacă numele League of Legends {username}#{tagline} este disponibil sau ocupat. Vezi detaliile jucătorului și informațiile contului pentru acest nume de invocator LoL.",
     "inGameName": "Nume în joc",
     "tagline": "Tagline",
     "enterUsername": "Introdu numele de utilizator",
@@ -43,6 +47,10 @@
   },
   "generator": {
     "title": "Generator Nume",
+    "metaTitle": "Generator Nume LoL - Generează nume unice League of Legends",
+    "metaDescription": "Generează nume de invocator unice League of Legends. Creează nume de utilizator LoL cool și disponibile cu taglines personalizate. Găsește numele perfect pentru contul tău League.",
+    "metaTitleResult": "Generează Taglines pentru {username} - Generator Nume LoL",
+    "metaDescriptionResult": "Generează taglines disponibile pentru numele de utilizator League of Legends {username}. Găsește taglines unice pentru a-ți completa numele de invocator LoL perfect.",
     "description": "Cauți o tagline gratuită pentru numele tău de vis în joc? Încearcă Generatorul.",
     "findAvailableTaglines": "Găsește tagline-uri disponibile",
     "availableTaglines": "Tagline-uri disponibile pentru {username}",
@@ -50,6 +58,8 @@
   },
   "tracker": {
     "title": "Urmăritor Conturi",
+    "metaTitle": "Urmăritor Conturi LoL - Urmărește conturi League of Legends prin PUUID",
+    "metaDescription": "Urmărește conturi League of Legends prin PUUID. Urmărește schimbările de nume ale jucătorilor, vezi detaliile conturilor și monitorizează jucătorii tăi LoL favoriți.",
     "description": "Vrei să urmărești un cont specific prin schimbările de nume? Folosește Urmăritorul de Conturi",
     "loadingPlayer": "Se încarcă informațiile jucătorului...",
     "noLolData": "Nu au fost găsite date LoL.",

@@ -17,6 +17,10 @@
   },
   "checker": {
     "title": "Sprawdzacz Nazw LoL i Riot",
+    "metaTitle": "Sprawdzacz Nazw LoL - Sprawdź czy nazwy League of Legends są dostępne",
+    "metaDescription": "Sprawdź czy nazwy przywoływaczy League of Legends są dostępne. Szukaj po nazwie użytkownika i tagline, aby zobaczyć czy twoja wymarzona nazwa LoL jest dostępna czy zajęta.",
+    "metaTitleResult": "Czy {username}#{tagline} jest dostępne? - Sprawdzacz Nazw LoL",
+    "metaDescriptionResult": "Sprawdź czy nazwa League of Legends {username}#{tagline} jest dostępna czy zajęta. Zobacz szczegóły gracza i informacje konta dla tej nazwy przywoływacza LoL.",
     "inGameName": "Nazwa w grze",
     "tagline": "Tagline",
     "enterUsername": "Wprowadź nazwę użytkownika",
@@ -43,6 +47,10 @@
   },
   "generator": {
     "title": "Generator Nazw",
+    "metaTitle": "Generator Nazw LoL - Generuj unikalne nazwy League of Legends",
+    "metaDescription": "Generuj unikalne nazwy przywoływaczy League of Legends. Twórz fajne, dostępne nazwy użytkowników LoL z niestandardowymi taglines. Znajdź idealną nazwę dla swojego konta League.",
+    "metaTitleResult": "Generuj Taglines dla {username} - Generator Nazw LoL",
+    "metaDescriptionResult": "Generuj dostępne taglines dla nazwy użytkownika League of Legends {username}. Znajdź unikalne taglines, aby ukończyć swoją idealną nazwę przywoływacza LoL.",
     "description": "Szukasz wolnej tagline dla swojej wymarzonej nazwy w grze? Wypróbuj Generator.",
     "findAvailableTaglines": "Znajdź dostępne tagline",
     "availableTaglines": "Dostępne tagline dla {username}",
@@ -50,6 +58,8 @@
   },
   "tracker": {
     "title": "Śledzenie Konta",
+    "metaTitle": "Śledzenie Konta LoL - Śledź konta League of Legends przez PUUID",
+    "metaDescription": "Śledź konta League of Legends przez PUUID. Obserwuj zmiany nazw graczy, przeglądaj szczegóły kont i monitoruj swoich ulubionych graczy LoL.",
     "description": "Chcesz śledzić konkretne konto przez zmiany nazw? Użyj Śledzenia Konta",
     "loadingPlayer": "Ładowanie informacji o graczu...",
     "noLolData": "Nie znaleziono danych LoL.",
