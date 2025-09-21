@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { LanguageSelector } from "./language-selector"
 
 type NavbarProps = {
@@ -18,12 +19,13 @@ type NavbarProps = {
 
 export function Navbar({ locale, navLabels }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   const toggleMenu = () => setIsOpen(!isOpen)
   const closeMenu = () => setIsOpen(false)
 
   const navLinks = [
-    { href: "/", label: navLabels.nameChecker },
+    { href: `/${locale}`, label: navLabels.nameChecker },
     { href: `/${locale}/generator`, label: navLabels.generator },
     { href: `/${locale}/tracker`, label: navLabels.tracker },
     { href: `/${locale}/leaderboard`, label: navLabels.leaderboard },
@@ -49,12 +51,21 @@ export function Navbar({ locale, navLabels }: NavbarProps) {
         </button>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 pl-6 lg:pl-0 ">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm hover:underline">
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-6 pl-6 lg:pl-0">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm hover:underline transition-opacity ${
+                  isActive ? "font-bold text-white" : "opacity-80"
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
           <LanguageSelector />
         </nav>
       </div>
@@ -62,16 +73,21 @@ export function Navbar({ locale, navLabels }: NavbarProps) {
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="md:hidden mt-4 px-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={closeMenu}
-              className="text-base font-medium"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className={`text-base font-medium transition-opacity ${
+                  isActive ? "font-bold text-white" : "opacity-80"
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
           <LanguageSelector />
         </nav>
       )}

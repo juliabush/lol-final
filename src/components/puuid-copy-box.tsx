@@ -24,7 +24,7 @@ export function PuuidCopyBox({ puuid }: PuuidCopyBoxProps) {
       className="bg-white/50 p-2 rounded-md font-mono text-[10px] flex items-center justify-between cursor-pointer hover:bg-white/60"
       onClick={handleCopyPuuid}
     >
-      <code>{puuid}</code>
+      <code className='flex-1 break-all'>{puuid}</code>
       <Button variant="ghost" size="icon" className="h-8 w-8">
         {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
       </Button>

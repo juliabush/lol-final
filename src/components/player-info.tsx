@@ -299,8 +299,8 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
   
   return (
     <div className="bg-gray-100 rounded-lg">
-      <div className="flex items-center gap-6">
-        <div className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-blue-500">
+      <div className="gap-2 flex items-center sm:gap-6">
+        <div className="relative w-20 h-16 sm:relative sm:w-20 sm:h-20 rounded-full overflow-hidden border-3 border-blue-500">
           <Image 
             src={iconUrl}
             alt={t('playerFound', { gameName: gameName || summonerInfo.name, tagLine: tagLine || '' })}
@@ -309,9 +309,9 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
           />
         </div>
         <div>
-          <div className="flex items-star gap-3">
-            <h3 className="text-lg font-medium">{gameName || summonerInfo.name}#{tagLine}</h3>
-            <span className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">
+          <div className="flex items-star gap-1">
+            <h3 className="sm:text-lg font-medium">{gameName || summonerInfo.name}#{tagLine}</h3>
+            <span className="px-2 h-8 sm:px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">
               {regionDisplay}
             </span>
           </div>
