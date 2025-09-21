@@ -73,7 +73,7 @@ export default async function TrackerResult({
               })}
             </h2>
             
-            <div className="p-8 flex">
+            <div className="p-2 sm:p-8 flex">
               <PlayerInfo 
                 puuid={result.puuid}
                 gameName={result.gameName}

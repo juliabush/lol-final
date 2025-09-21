@@ -75,7 +75,7 @@ export function NameChecker({
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex gap-4 mb-6 justify-center">
+      <div className="sm:gap-4 flex gap-2 mb-6 justify-center">
         <div className="w-32">
           <label htmlFor="username" className="block text-sm font-medium mb-1">
             {tChecker('inGameName')}

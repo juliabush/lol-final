@@ -64,7 +64,7 @@ export default async function NameResult({
 
             {!result.isAvailable && result.account && (
               <>
-                <div className="flex items-center justify-between p-8">
+                <div className="p-2 sm:p-8 flex items-center justify-between">
                   <div className="flex-1">
                     <PlayerInfo 
                       puuid={result.account.puuid}
