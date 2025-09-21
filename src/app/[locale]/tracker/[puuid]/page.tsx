@@ -4,6 +4,21 @@ import { AccountTracker } from '@/components/account-tracker'
 import { PlayerInfo } from '@/components/player-info'
 import { PuuidCopyBox } from '@/components/puuid-copy-box'
 import { getTranslations } from 'next-intl/server'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ puuid: string; locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  
+  return {
+    alternates: {
+      canonical: `https://lolnames.gg/${locale}/tracker`
+    }
+  }
+}
 
 async function getAccountByPuuid(puuid: string) {
   const apiKey = process.env.RIOT_API_KEY

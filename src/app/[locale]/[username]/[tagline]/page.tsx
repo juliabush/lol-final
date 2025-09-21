@@ -3,6 +3,21 @@ import { SearchContainer } from '@/components/search-container'
 import { PlayerInfo } from '@/components/player-info'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ username: string; tagline: string; locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  
+  return {
+    alternates: {
+      canonical: `https://lolnames.gg/${locale}`
+    }
+  }
+}
 
 async function checkNameAvailability(username: string, tagline: string) {
   try {

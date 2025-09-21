@@ -4,6 +4,21 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { headers } from 'next/headers'
 import { getTranslations } from 'next-intl/server'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ username: string; locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  
+  return {
+    alternates: {
+      canonical: `https://lolnames.gg/${locale}/generator`
+    }
+  }
+}
 
 /**
  * Generates a random alphanumeric tagline of random length between min and max

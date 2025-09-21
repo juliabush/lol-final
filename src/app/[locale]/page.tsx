@@ -4,6 +4,21 @@ import { SearchContainer } from '@/components/search-container'
 import { AccountTracker } from '@/components/account-tracker'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  
+  return {
+    alternates: {
+      canonical: `https://lolnames.gg/${locale}`
+    }
+  }
+}
 
 export default async function Home({
   params
