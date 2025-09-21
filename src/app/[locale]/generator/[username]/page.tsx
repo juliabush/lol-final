@@ -49,7 +49,7 @@ function generateRandomTagline(minLength: number = 3, maxLength: number = 5): st
 /**
  * Generates an array of unique random taglines with lengths between 3-5 characters
  */
-function generateRandomTaglines(count: number = 10): string[] {
+function generateRandomTaglines(count: number = 9): string[] {
   const taglines = new Set<string>()
   
   while (taglines.size < count) {
