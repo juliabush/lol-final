@@ -29,4 +29,17 @@ User-agent: Baiduspider
 Allow: /
 
 User-agent: YandexBot
-Allow: /
+Disallow: /
+
+# Allow only one-level paths like /en/, /ko/, /ru/
+Allow: /*/
+
+# Allow specific two-level tools under those language folders
+Allow: /*/generator
+Allow: /*/tracker
+Allow: /*/leaderboard
+Allow: /*/match
+Allow: /*/faq
+
+# Block anything deeper (two or more slashes after root)
+Disallow: /*/*/*/
