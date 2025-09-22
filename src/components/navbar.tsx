@@ -33,6 +33,14 @@ export function Navbar({ locale, navLabels }: NavbarProps) {
     { href: `/${locale}/faq`, label: navLabels.faq },
   ]
 
+  const isOtherLinkActive =
+    pathname !== `/${locale}` &&
+    navLinks.some(
+      (link) =>
+        link.href !== `/${locale}` &&
+        (pathname === link.href || pathname.startsWith(`${link.href}/`))
+    )
+
   return (
     <header className="bg-primary text-white py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -53,7 +61,11 @@ export function Navbar({ locale, navLabels }: NavbarProps) {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 pl-6 lg:pl-0">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href
+            const isActive =
+              link.href === `/${locale}`
+                ? !isOtherLinkActive // highlight nameChecker if no other matches
+                : pathname === link.href || pathname.startsWith(`${link.href}/`)
+
             return (
               <Link
                 key={link.href}
@@ -74,7 +86,11 @@ export function Navbar({ locale, navLabels }: NavbarProps) {
       {isOpen && (
         <nav className="md:hidden mt-4 px-4 flex flex-col gap-4">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href
+            const isActive =
+              link.href === `/${locale}`
+                ? !isOtherLinkActive
+                : pathname === link.href || pathname.startsWith(`${link.href}/`)
+
             return (
               <Link
                 key={link.href}
