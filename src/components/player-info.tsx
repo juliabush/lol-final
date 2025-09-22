@@ -311,7 +311,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
         <div>
           <div className="flex items-star gap-1">
             <h3 className="sm:text-lg font-medium">{gameName || summonerInfo.name}#{tagLine}</h3>
-            <span className="px-2 h-8 sm:px-3 py-2 text-sm bg-blue-100 text-blue-800 rounded-full">
+            <span className="px-2 h-8 ml-2 py-2 text-sm bg-blue-100 text-blue-800 rounded-full">
               {regionDisplay}
             </span>
           </div>
