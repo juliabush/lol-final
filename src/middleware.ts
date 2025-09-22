@@ -8,8 +8,7 @@ const intlMiddleware = createMiddleware(routing);
 // Custom logging middleware
 export default function middleware(request: NextRequest) {
   // Get client IP address
-  const ip = request.ip || 
-             request.headers.get('x-forwarded-for') || 
+  const ip = request.headers.get('x-forwarded-for') || 
              request.headers.get('x-real-ip') || 
              request.headers.get('cf-connecting-ip') || 
              'unknown';
