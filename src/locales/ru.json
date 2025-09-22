@@ -15,6 +15,11 @@
     "matchLookup": "Поиск Матчей",
     "faq": "Часто Задаваемые Вопросы"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - Проверка и Генератор Имён League of Legends",
+    "defaultDescription": "Проверяйте имена призывателей League of Legends, генерируйте уникальные имена LoL, отслеживайте аккаунты, просматривайте рейтинги и ищите матчи."
+  },
   "checker": {
     "title": "Проверка Имён LoL и Riot",
     "metaTitle": "Проверка Имён LoL - Проверьте доступность имён League of Legends",

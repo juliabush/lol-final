@@ -15,6 +15,11 @@
     "matchLookup": "Ricerca Match",
     "faq": "FAQ"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - Controllore e Generatore Nomi League of Legends",
+    "defaultDescription": "Controlla nomi evocatore League of Legends, genera nomi LoL unici, traccia account, visualizza classifiche e cerca partite."
+  },
   "checker": {
     "title": "Controllore Nomi LoL e Riot",
     "metaTitle": "Controllore Nomi LoL - Controlla se i nomi di League of Legends sono disponibili",

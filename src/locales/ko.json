@@ -15,6 +15,11 @@
     "matchLookup": "매치 검색",
     "faq": "자주 묻는 질문"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - 리그 오브 레전드 이름 확인기 및 생성기",
+    "defaultDescription": "리그 오브 레전드 소환사 이름 확인, 고유한 LoL 이름 생성, 계정 추적, 리더보드 보기, 매치 검색."
+  },
   "checker": {
     "title": "LoL 및 Riot 이름 확인기",
     "metaTitle": "LoL 이름 확인기 - 리그 오브 레전드 이름 사용 가능 여부 확인",

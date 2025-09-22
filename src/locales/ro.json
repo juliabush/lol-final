@@ -15,6 +15,11 @@
     "matchLookup": "Căutare Meciuri",
     "faq": "Întrebări Frecvente"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - Verificator și Generator Nume League of Legends",
+    "defaultDescription": "Verifică numele de invocator League of Legends, generează nume LoL unice, urmărește conturi, vizualizează clasamente și caută meciuri."
+  },
   "checker": {
     "title": "Verificator Nume LoL și Riot",
     "metaTitle": "Verificator Nume LoL - Verifică dacă numele League of Legends sunt disponibile",
