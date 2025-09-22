@@ -21,20 +21,22 @@ export function NameGenerator({
   const tErrors = useTranslations('errors')
   // Initialize state with correct priority: URL params > localStorage > empty
   const [username, setUsername] = useState(() => {
-    return defaultUsername || localStorage.getItem('riotUsername') || ''
+    return defaultUsername || (typeof window !== 'undefined' ? localStorage.getItem('riotUsername') : null) || ''
   })
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   // Update state when URL parameters change
   useEffect(() => {
-    const finalUsername = defaultUsername || localStorage.getItem('riotUsername') || ''
+    const finalUsername = defaultUsername || (typeof window !== 'undefined' ? localStorage.getItem('riotUsername') : null) || ''
     setUsername(finalUsername)
   }, [defaultUsername])
 
   // Save values when they change
   useEffect(() => {
-    if (username) localStorage.setItem('riotUsername', username)
+    if (typeof window !== 'undefined' && username) {
+      localStorage.setItem('riotUsername', username)
+    }
   }, [username])
 
   const handleSubmit = async (e: React.FormEvent) => {
