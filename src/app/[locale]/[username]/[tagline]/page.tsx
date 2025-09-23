@@ -68,7 +68,7 @@ export default async function NameResult({
         defaultTagline={tagline}
       />
       
-      <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100">
+      <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100 dark:bg-neutral-900 dark:text-white">
         {result.error ? (
           <div className="text-red-600">
             <h2>{t('connectionError')}</h2>
@@ -90,7 +90,7 @@ export default async function NameResult({
 
             {!result.isAvailable && result.account && (
               <>
-                <div className="p-2 flex-column gap-2 mt-2 sm:p-8 sm:flex sm:items-center sm:justify-between">
+                <div className="p-2 flex-column gap-2 mt-2 sm:p-8 sm:flex sm:items-center sm:justify-between dark:bg-neutral-900 dark:text-white">
                   <div className="flex-1">
                     <PlayerInfo 
                       puuid={result.account.puuid}

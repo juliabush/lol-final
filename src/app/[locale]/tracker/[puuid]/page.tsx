@@ -81,7 +81,7 @@ export default async function TrackerResult({
         defaultTagline={result?.tagLine}
       />
       
-      <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100">
+      <div className="pt-2 pb-2 pl-4 pr-4 rounded-lg bg-gray-100 dark:bg-neutral-900 dark:text-white">
         {result.error ? (
           <div className="text-red-600">
             <h2>{t('connectionError')}</h2>
@@ -105,7 +105,7 @@ export default async function TrackerResult({
                 tagLine={result.tagLine}
               />
             </div>
-            <div className="mt-4 space-y-2">
+            <div className="mt-4 mb-4 space-y-2">
               <p>{t('savePuuid')}</p>
               <PuuidCopyBox puuid={result.puuid} />
               <p>{t('bookmarkPage')}</p>
