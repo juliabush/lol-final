@@ -15,6 +15,11 @@
     "matchLookup": "Wyszukiwanie Meczów",
     "faq": "FAQ"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - Sprawdzacz i Generator Nazw League of Legends",
+    "defaultDescription": "Sprawdź nazwy przywoływaczy League of Legends, generuj unikalne nazwy LoL, śledź konta, przeglądaj rankingi i wyszukuj mecze."
+  },
   "checker": {
     "title": "Sprawdzacz Nazw LoL i Riot",
     "metaTitle": "Sprawdzacz Nazw LoL - Sprawdź czy nazwy League of Legends są dostępne",

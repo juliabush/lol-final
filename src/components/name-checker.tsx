@@ -21,10 +21,10 @@ export function NameChecker({
   const tChecker = useTranslations('checker')
   // Initialize state with correct priority: URL params > localStorage > empty
   const [username, setUsername] = useState(() => {
-    return defaultUsername || localStorage.getItem('riotUsername') || ''
+    return defaultUsername || (typeof window !== 'undefined' ? localStorage.getItem('riotUsername') : null) || ''
   })
   const [tagline, setTagline] = useState(() => {
-    return defaultTagline || localStorage.getItem('riotTagline') || ''
+    return defaultTagline || (typeof window !== 'undefined' ? localStorage.getItem('riotTagline') : null) || ''
   })
   const [isLoading, setIsLoading] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
@@ -32,8 +32,8 @@ export function NameChecker({
   // Update state when URL parameters change
   useEffect(() => {
     // Use URL parameters if available, otherwise fall back to localStorage, then defaults
-    const finalUsername = defaultUsername || localStorage.getItem('riotUsername') || ''
-    const finalTagline = defaultTagline || localStorage.getItem('riotTagline') || ''
+    const finalUsername = defaultUsername || (typeof window !== 'undefined' ? localStorage.getItem('riotUsername') : null) || ''
+    const finalTagline = defaultTagline || (typeof window !== 'undefined' ? localStorage.getItem('riotTagline') : null) || ''
     
     setUsername(finalUsername)
     setTagline(finalTagline)
@@ -41,8 +41,10 @@ export function NameChecker({
 
   // Save values when they change
   useEffect(() => {
-    if (username) localStorage.setItem('riotUsername', username)
-    if (tagline) localStorage.setItem('riotTagline', tagline)
+    if (typeof window !== 'undefined') {
+      if (username) localStorage.setItem('riotUsername', username)
+      if (tagline) localStorage.setItem('riotTagline', tagline)
+    }
   }, [username, tagline])
 
   const handleTaglineChange = (e: React.ChangeEvent<HTMLInputElement>) => {

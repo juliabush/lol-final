@@ -15,6 +15,11 @@
     "matchLookup": "Maç Arama",
     "faq": "Sık Sorulan Sorular"
   },
+  "metadata": {
+    "siteName": "LolNames.gg",
+    "defaultTitle": "LolNames.gg - League of Legends İsim Kontrolcüsü ve Üretici",
+    "defaultDescription": "League of Legends çağırıcı isimlerini kontrol edin, benzersiz LoL isimleri oluşturun, hesapları takip edin, liderlik tablolarını görüntüleyin ve maç arayın."
+  },
   "checker": {
     "title": "LoL ve Riot İsim Kontrolcüsü",
     "metaTitle": "LoL İsim Kontrolcüsü - League of Legends isimlerinin müsait olup olmadığını kontrol edin",
