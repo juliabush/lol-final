@@ -1,10 +1,10 @@
-
 import Script from 'next/script'
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "../globals.css"
 import { NextIntlClientProvider } from "next-intl"
 import { getTranslations } from "next-intl/server"
+import { Providers } from '.././providers'
 import { Navbar } from "@/components/navbar"
 
 const geistSans = Geist({
@@ -61,7 +61,7 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && (
           <>
@@ -81,10 +81,12 @@ export default async function LocaleLayout({
         )}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NextIntlClientProvider locale={locale}>
-          <Navbar locale={locale} navLabels={navLabels} />
-          <main className="container mx-auto p-4 mt-6">{children}</main>
-        </NextIntlClientProvider>
+        <Providers>
+          <NextIntlClientProvider locale={locale}>
+            <Navbar locale={locale} navLabels={navLabels} />
+            <main className="container mx-auto p-4 mt-6">{children}</main>
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   )

@@ -25,7 +25,7 @@ export function LanguageSelector() {
   return (
     <Select onValueChange={handleLanguageChange} defaultValue={locale}>
       <SelectTrigger 
-        className="w-[110px] bg-white border-none text-gray-800 focus:ring-0"
+        className="w-[110px] bg-white border-none text-gray-800 focus:ring-0 dark:text-white"
       >
         <SelectValue placeholder="Language" />
       </SelectTrigger>

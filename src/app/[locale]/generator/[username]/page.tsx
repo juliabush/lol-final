@@ -124,7 +124,7 @@ export default async function GeneratorResult({
     <SearchContainer title={t('title')}>
       <NameGenerator defaultUsername={decodedUsername} />
       
-      <div className="pt-2 pb-4 pl-4 pr-4 rounded-lg bg-gray-100">
+      <div className="pt-2 pb-4 pl-4 pr-4 rounded-lg bg-gray-100 dark:bg-neutral-900 dark:text-white">
         {hasError ? (
           <div className="text-red-600">
             <h2>{t('connectionError')}</h2>
@@ -142,9 +142,9 @@ export default async function GeneratorResult({
                   <Link 
                     key={tagline}
                     href={`/${locale}/${encodeURIComponent(decodedUsername)}/${tagline}`}
-                    className="p-4 bg-white rounded-lg text-center hover:bg-blue-50 transition-colors"
+                    className="p-4 bg-white rounded-lg text-center hover:bg-blue-50 transition-colors dark:text-black"
                   >
-                    <span className="text-lg font-medium">{tagline}</span>
+                    <span className="text-lg font-medium ">{tagline}</span>
                   </Link>
                 ))}
               </div>

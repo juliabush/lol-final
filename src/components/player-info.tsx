@@ -299,7 +299,7 @@ export function PlayerInfo({ puuid, gameName, tagLine }: PlayerInfoProps) {
   
   return (
     <div className="bg-gray-100 rounded-lg">
-      <div className="gap-2 flex items-center sm:gap-6">
+      <div className="gap-2 flex items-center sm:gap-6 dark:bg-neutral-900 dark:text-white">
         <div className="relative w-16 h-16 sm:relative sm:w-20 sm:h-20 rounded-full overflow-hidden border-3 border-blue-500">
           <Image 
             src={iconUrl}
