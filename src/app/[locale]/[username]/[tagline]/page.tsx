@@ -90,7 +90,7 @@ export default async function NameResult({
 
             {!result.isAvailable && result.account && (
               <>
-                <div className="p-2 flex-column gap-2 mt-2 sm:p-8 sm:flex sm:items-center sm:justify-between dark:bg-neutral-900 dark:text-white">
+                <div className="flex-column mt-2 sm:p-8 sm:flex sm:items-center sm:justify-between dark:bg-neutral-900 dark:text-white">
                   <div className="flex-1">
                     <PlayerInfo 
                       puuid={result.account.puuid}
@@ -101,7 +101,7 @@ export default async function NameResult({
                   
                   <Link 
                     href={`/${locale}/tracker/${result.account.puuid}`}
-                    className="ml-4 mt-4 w-[140px] inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                    className="mt-4 mb-4 sm:ml-4 sm:mt-4 w-[140px] inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
                   >
                     {t('trackAccount')}
                   </Link>
