@@ -1,64 +1,72 @@
+"use server";
 export interface RiotAccount {
-  puuid: string
-  gameName: string
-  tagLine: string
+  puuid: string;
+  gameName: string;
+  tagLine: string;
 }
 
-export async function getAccountByRiotId(username: string, tagline: string): Promise<RiotAccount | null> {
-  const apiKey = process.env.RIOT_API_KEY
-  if (!apiKey) throw new Error('API key not configured')
+export async function getAccountByRiotId(
+  username: string,
+  tagline: string
+): Promise<RiotAccount | null> {
+  const apiKey = process.env.RIOT_API_KEY;
+  if (!apiKey) throw new Error("API key not configured");
 
   try {
     const response = await fetch(
-      `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(username)}/${tagline}`,
+      `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(
+        username
+      )}/${tagline}`,
       {
         headers: {
-          'X-Riot-Token': apiKey
-        }
+          "X-Riot-Token": apiKey,
+        },
       }
-    )
+    );
 
     if (!response.ok) {
-      if (response.status === 404) return null
-      throw new Error(`API error: ${response.status}`)
+      if (response.status === 404) return null;
+      throw new Error(`API error: ${response.status}`);
     }
 
-    return response.json()
+    return response.json();
   } catch (error) {
-    console.error('Failed to fetch account:', error)
-    throw error
+    console.error("Failed to fetch account:", error);
+    throw error;
   }
 }
 
-export async function getAccountByPuuid(puuid: string): Promise<RiotAccount | null> {
-  const apiKey = process.env.RIOT_API_KEY
-  if (!apiKey) throw new Error('API key not configured')
+export async function getAccountByPuuid(
+  puuid: string
+): Promise<RiotAccount | null> {
+  const apiKey = process.env.RIOT_API_KEY;
+  if (!apiKey) throw new Error("API key not configured");
 
   try {
     const response = await fetch(
       `https://americas.api.riotgames.com/riot/account/v1/accounts/by-puuid/${puuid}`,
       {
         headers: {
-          'X-Riot-Token': apiKey
-        }
+          "X-Riot-Token": apiKey,
+        },
       }
-    )
+    );
 
     if (!response.ok) {
-      if (response.status === 404) return null
-      throw new Error(`API error: ${response.status}`)
+      if (response.status === 404) return null;
+      throw new Error(`API error: ${response.status}`);
     }
 
-    return response.json()
+    return response.json();
   } catch (error) {
-    console.error('Failed to fetch account:', error)
-    throw error
+    console.error("Failed to fetch account:", error);
+    throw error;
   }
 }
 
 export async function getMatch(region: string, matchId: string): Promise<any> {
   const apiKey = process.env.RIOT_API_KEY;
-  if (!apiKey) throw new Error('API key not configured');
+  if (!apiKey) throw new Error("API key not configured");
 
   try {
     console.log(`Fetching match details for ${matchId} in region ${region}`);
@@ -66,71 +74,103 @@ export async function getMatch(region: string, matchId: string): Promise<any> {
       `https://${region}.api.riotgames.com/lol/match/v5/matches/${matchId}`,
       {
         headers: {
-          'X-Riot-Token': apiKey
-        }
+          "X-Riot-Token": apiKey,
+        },
       }
     );
 
     if (!response.ok) {
-      console.error(`Match API error: ${response.status} ${response.statusText}`);
-      throw new Error('Match not found');
+      console.error(
+        `Match API error: ${response.status} ${response.statusText}`
+      );
+      throw new Error("Match not found");
     }
 
     return response.json();
   } catch (error) {
-    console.error('Failed to fetch match details:', error);
+    console.error("Failed to fetch match details:", error);
     throw error;
   }
 }
 
 export async function getMatches(region: string, puuid: string): Promise<any> {
   const apiKey = process.env.RIOT_API_KEY;
-  if (!apiKey) throw new Error('API key not configured');
+  if (!apiKey) throw new Error("API key not configured");
 
   try {
     const response = await fetch(
       `https://${region}.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?count=1`,
       {
         headers: {
-          'X-Riot-Token': apiKey
-        }
+          "X-Riot-Token": apiKey,
+        },
       }
     );
 
     if (!response.ok) {
-      throw new Error('Match history not found');
+      throw new Error("Match history not found");
     }
 
     return response.json();
   } catch (error) {
-    console.error('Failed to fetch match history:', error);
+    console.error("Failed to fetch match history:", error);
     throw error;
   }
 }
 
 export async function getSummoner(region: string, puuid: string): Promise<any> {
   const apiKey = process.env.RIOT_API_KEY;
-  if (!apiKey) throw new Error('API key not configured');
+  if (!apiKey) throw new Error("API key not configured");
 
   try {
-    console.log(`Fetching summoner info for puuid ${puuid} in region ${region}`);
+    console.log(
+      `Fetching summoner info for puuid ${puuid} in region ${region}`
+    );
     const response = await fetch(
       `https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}`,
       {
         headers: {
-          'X-Riot-Token': apiKey
-        }
+          "X-Riot-Token": apiKey,
+        },
       }
     );
 
     if (!response.ok) {
-      console.error(`Summoner API error: ${response.status} ${response.statusText}`);
-      throw new Error('Summoner not found');
+      console.error(
+        `Summoner API error: ${response.status} ${response.statusText}`
+      );
+      throw new Error("Summoner not found");
     }
 
     return response.json();
   } catch (error) {
-    console.error('Failed to fetch summoner:', error);
+    console.error("Failed to fetch summoner:", error);
+    throw error;
+  }
+}
+// match lookup riot api
+export async function getActiveGameBySummonerId(
+  summonerId: string,
+  region: string
+): Promise<any> {
+  const apiKey = process.env.RIOT_API_KEY;
+  try {
+    const response = await fetch(
+      `https://${region}.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${summonerId}`,
+      {
+        headers: {
+          "X-Riot-Token": apiKey as string,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      if (response.status === 404) return null;
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
     throw error;
   }
 }
