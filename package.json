@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scrape": "node src/lib/scraper/scrape.js"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.2.2",
