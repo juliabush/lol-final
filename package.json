@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "scrape": "node src/lib/scraper/scrape.js"
+    "scrape": "node src/lib/scraper/scraper.js"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.2.2",
