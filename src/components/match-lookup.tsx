@@ -28,10 +28,11 @@ export default function ActiveGameForm() {
         )}&region=${region}`
       );
       const result = await res.json();
+      console.log(res.status, await res.text());
       if (res.ok) setData(result);
-      else setError(result.error || "Failed to fetch");
+      else setError(result.error || "Failed to find summoner");
     } catch {
-      setError("Failed to fetch");
+      setError("Failed to find summoner");
     }
     setLoading(false);
   };
