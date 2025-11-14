@@ -2,11 +2,13 @@
   "name": "lolnames25",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scrape": "node src/lib/scraper/scraper.js"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.2.2",
@@ -14,11 +16,15 @@
     "@radix-ui/react-tabs": "^1.1.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
     "lucide-react": "^0.503.0",
     "next": "15.3.1",
     "next-intl": "^4.1.0",
     "next-themes": "^0.4.6",
+    "playwright-extra": "^4.3.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
@@ -27,6 +33,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
