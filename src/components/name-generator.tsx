@@ -1,96 +1,151 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { useRouter, useParams } from 'next/navigation'
-import { useTranslations } from 'next-intl'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Loader2 } from 'lucide-react'
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 
-export function NameGenerator({ 
-  defaultUsername = ''
-}: { 
-  defaultUsername?: string
+export function NameGenerator({
+  defaultUsername = "",
+}: {
+  defaultUsername?: string;
 }) {
-  const router = useRouter()
-  const params = useParams()
-  const locale = params.locale as string
-  const tCommon = useTranslations('common')
-  const tChecker = useTranslations('checker')
-  const tGenerator = useTranslations('generator')
-  const tErrors = useTranslations('errors')
-  // Initialize state with correct priority: URL params > localStorage > empty
+  const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
+  const tCommon = useTranslations("common");
+  const tChecker = useTranslations("checker");
+  const tGenerator = useTranslations("generator");
+  const tErrors = useTranslations("errors");
+
   const [username, setUsername] = useState(() => {
-    return defaultUsername || (typeof window !== 'undefined' ? localStorage.getItem('riotUsername') : null) || ''
-  })
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+    return (
+      defaultUsername ||
+      (typeof window !== "undefined"
+        ? localStorage.getItem("riotUsername")
+        : null) ||
+      ""
+    );
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // Update state when URL parameters change
   useEffect(() => {
-    const finalUsername = defaultUsername || (typeof window !== 'undefined' ? localStorage.getItem('riotUsername') : null) || ''
-    setUsername(finalUsername)
-  }, [defaultUsername])
+    const finalUsername =
+      defaultUsername ||
+      (typeof window !== "undefined"
+        ? localStorage.getItem("riotUsername")
+        : null) ||
+      "";
+    setUsername(finalUsername);
+  }, [defaultUsername]);
 
-  // Save values when they change
   useEffect(() => {
-    if (typeof window !== 'undefined' && username) {
-      localStorage.setItem('riotUsername', username)
+    if (typeof window !== "undefined" && username) {
+      localStorage.setItem("riotUsername", username);
     }
-  }, [username])
+  }, [username]);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!username) return
+    e.preventDefault();
+    if (!username) return;
 
-    setIsLoading(true)
-    setError(null)
+    setIsLoading(true);
+    setError(null);
 
     try {
-      // Validate the username
       if (username.length < 3) {
-        throw new Error(tErrors('minLength'))
+        throw new Error(tErrors("minLength"));
       }
-      
-      // Redirect to the generator results page
-      router.push(`/${locale}/generator/${encodeURIComponent(username)}`)
+
+      router.push(`/${locale}/generator/${encodeURIComponent(username)}`);
     } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message)
-      } else {
-        setError(tCommon('error'))
-      }
+      if (error instanceof Error) setError(error.message);
+      else setError(tCommon("error"));
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="flex gap-4 mb-6">
-        <div className="flex-1">
-          <label htmlFor="username" className="block text-sm font-medium mb-1">
-            {tChecker('inGameName')}
-          </label>
-          <Input
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder={tChecker('enterUsername')}
-            required
-          />
-        </div>
+    <div className="flex items-center justify-center py-12 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="w-full max-w-2xl"
+      >
+        <Card className="shadow-lg border border-border/40 bg-card/80 backdrop-blur-sm hover:shadow-xl transition-all p-6">
+          <CardContent className="pt-0">
+            <div className="mb-4">
+              <h2 className="text-xl font-semibold tracking-tight text-left">
+                {tGenerator("title", { default: "Name Generator" })}
+              </h2>
+              <div className="h-1 w-24 rounded mt-2 bg-gradient-to-r from-blue-600 to-purple-600" />
+              <p className="text-sm text-muted-foreground mt-8 text-center">
+                {tGenerator("subtitle", {
+                  default:
+                    "Find unique and available Riot ID taglines instantly.",
+                })}
+              </p>
+            </div>
 
-        <div className="flex items-end">
-          <Button type="submit" disabled={isLoading}>
-            {isLoading ? <Loader2 className="animate-spin" /> : tGenerator('findAvailableTaglines')}
-          </Button>
-        </div>
-      </div>
-      
-      {error && (
-        <p className="mt-2 text-sm text-destructive">{error}</p>
-      )}
-    </form>
-  )
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                <div className="flex-1">
+                  <label
+                    htmlFor="username"
+                    className="block text-sm font-medium mb-1 text-muted-foreground"
+                  >
+                    {tChecker("inGameName")}
+                  </label>
+                  <Input
+                    id="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder={tChecker("enterUsername")}
+                    required
+                  />
+                </div>
+
+                <div className="flex items-end">
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className="min-w-[150px] font-medium transition-all hover:scale-[1.03]"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="animate-spin mr-2 h-4 w-4" />
+                        {tCommon("loading")}
+                      </>
+                    ) : (
+                      tGenerator("findAvailableTaglines")
+                    )}
+                  </Button>
+                </div>
+              </div>
+            </form>
+
+            {error && (
+              <p className="mt-4 text-sm text-destructive text-left">{error}</p>
+            )}
+          </CardContent>
+
+          <CardFooter className="pt-2">
+            <p className="text-center text-xs text-muted-foreground w-full mb-4">
+              {tGenerator("footerNote", {
+                default:
+                  "We’ll suggest fresh and available taglines for your Riot ID.",
+              })}
+            </p>
+          </CardFooter>
+        </Card>
+      </motion.div>
+    </div>
+  );
 }
