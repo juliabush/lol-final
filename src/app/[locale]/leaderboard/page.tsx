@@ -1,12 +1,11 @@
-import { SearchContainer } from '@/components/search-container'
-import { getTranslations } from 'next-intl/server'
+import LevelLeaderboardClient from "@/components/leaderboard";
 
-export default async function LeaderboardPage() {
-  const t = await getTranslations('leaderboard')
+export default function Page() {
+  const leaderboardData = {};
 
   return (
-    <SearchContainer title={t('title')} activeTab="leaderboard">
-        <p>{t('description')}</p>
-    </SearchContainer>
-  )
+    <main className="min-h-screen bg-gray-100 p-6">
+      <LevelLeaderboardClient leaderboardData={leaderboardData} />
+    </main>
+  );
 }
